@@ -69,7 +69,7 @@ function CartMenu() {
                       alt={item?.name}
                       width='123px'
                       height='164px'
-                      src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                      src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.url}`}
                     />
                   </Box>
                   <Box flex='1 1 60%'>
@@ -101,7 +101,6 @@ function CartMenu() {
                         >
                           <AddIcon />
                         </IconButton>
-                        <Typography>{item.count}</Typography>
                       </Box>
 
                        {/* PRICE */}
