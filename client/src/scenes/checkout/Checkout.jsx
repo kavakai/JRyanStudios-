@@ -4,6 +4,7 @@ import { Box, Button, Stepper, Step, StepLabel } from '@mui/material';
 import { Formik } from 'formik'; 
 import * as yup from 'yup';
 import { shades } from '../../theme';
+import Shipping from './Shipping';
 
 const initialValues = {
   billingAddress: {
@@ -112,7 +113,28 @@ function Checkout() {
           initialValues={initialValues}
           validationSchema={checkoutSchema[activeStep]}
         >
-
+          {({
+            values, 
+            errors,
+            touched,
+            handleBlur, 
+            handleChange,
+            handleSubmit,
+            setFieldValue
+          }) => (
+            <form onSubmit={handleSubmit}>
+              {isFirstStep && (
+                <Shipping 
+                  values={values}
+                  errors={errors}
+                  touched={touched}
+                  handleBlur={handleBlur}
+                  handleChange={handleChange}
+                  setFieldValue={setFieldValue}
+                />
+              )}
+            </form>
+          )}
         </Formik>
       </Box>
     </Box>
