@@ -13,7 +13,7 @@ function Shipping({ values, errors, touched, handleBlur, handleChange, setFieldV
         </Typography>
         <AddressForm 
           type='billingAddress'
-          value={values.billingAddress}
+          values={values.billingAddress}
           errors={errors}
           touched={touched}
           handleBlur={handleBlur}
@@ -47,7 +47,7 @@ function Shipping({ values, errors, touched, handleBlur, handleChange, setFieldV
           </Typography>
           <AddressForm 
             type='shippingAddress'
-            value={values.shippingAddress}
+            values={values.shippingAddress}
             errors={errors}
             touched={touched}
             handleBlur={handleBlur}
