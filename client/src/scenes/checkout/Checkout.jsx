@@ -5,6 +5,13 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { shades } from '../../theme';
 import Shipping from './Shipping';
+import Payment from './Payment';
+import { loadStripe } from '@stripe/stripe-js';
+
+
+const stripePromise = loadStripe(
+  'pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99'
+);
 
 const initialValues = {
   billingAddress: {
