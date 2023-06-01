@@ -10,8 +10,11 @@ import { loadStripe } from '@stripe/stripe-js';
 
 
 const stripePromise = loadStripe(
-  'pk_test_51NDsOeGc9Mev9oaLpLcF8txfRm5sFdOuoyZWyT3ZQKa4MhC2TjW055Q1CUU2piUc9X3SO7YNXn7BtcW7lA0b47W500xfwiehRN'
-  // 'pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99'
+  // TEST KEY
+  // 'pk_test_51NDsOeGc9Mev9oaLpLcF8txfRm5sFdOuoyZWyT3ZQKa4MhC2TjW055Q1CUU2piUc9X3SO7YNXn7BtcW7lA0b47W500xfwiehRN'
+  
+  // LIVE KEY
+  'pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99'
 );
 
 const initialValues = {
