@@ -2,11 +2,14 @@ import React from 'react';
 import { useTheme } from '@mui/material';
 import { Box, Typography } from '@mui/material';
 import { shades } from '../../theme';
+import { useNavigate } from 'react-router-dom';
 
 function Footer() {
   const { 
     palette: { neutral }
   } = useTheme();
+  const navigate = useNavigate();
+
   return (
     <Box mt='70px' p='40px 0' backgroundColor={neutral.light}>
       <Box
@@ -32,7 +35,7 @@ function Footer() {
           </div>
         </Box>
         <Box>
-          <Typography variant='h4' fontWeight='bold' mb='30px'>About</Typography>
+          <Typography variant='h4' fontWeight='bold' mb='30px' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About</Typography>
           <Typography mb='30px'>Terms and Conditions</Typography>
           <Typography mb='30px'>Privacy Policy</Typography>
         </Box>
