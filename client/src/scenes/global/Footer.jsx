@@ -11,7 +11,7 @@ function Footer() {
   const navigate = useNavigate();
 
   return (
-    <Box mt='70px' p='40px 0' backgroundColor={neutral.main}>
+    <Box mt='70px' p='40px 0' backgroundColor={neutral.light}>
       <Box
         width='80%'
         m='auto'

@@ -22,7 +22,7 @@ function Navbar() {
       width='100%'
       height='60px'
       // backgroundColor='rgba(255, 255, 255, 0.95)'
-      backgroundColor={neutral.main}
+      backgroundColor={neutral.light}
       color='black'
       position='fixed'
       top='0'
