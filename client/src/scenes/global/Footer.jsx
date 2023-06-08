@@ -11,7 +11,7 @@ function Footer() {
   const navigate = useNavigate();
 
   return (
-    <Box mt='70px' p='40px 0' backgroundColor={neutral.light}>
+    <Box mt='70px' p='40px 0' backgroundColor={neutral.main}>
       <Box
         width='80%'
         m='auto'
@@ -30,23 +30,27 @@ function Footer() {
           >
             J.Ryan Studios
           </Typography>
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In mollis nunc sed id semper. Cras semper auctor neque vitae tempus quam pellentesque. Lobortis scelerisque fermentum dui faucibus in ornare quam. Feugiat nisl pretium fusce id velit ut tortor pretium.
-          </div>
+          <Typography
+            variant='h4'  
+            mb='30px' 
+            color={shades.secondary[300]}>
+            Website by - Kai Kuller
+          </Typography>
         </Box>
         <Box>
-          <Typography variant='h4' fontWeight='bold' mb='30px' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About</Typography>
-          <Typography mb='30px'>Terms and Conditions</Typography>
-          <Typography mb='30px'>Privacy Policy</Typography>
+          {/* <Typography variant='h4' fontWeight='bold' mb='30px' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About Me</Typography> */}
+          {/* <Typography mb='30px'>Terms and Conditions</Typography>
+          <Typography mb='30px'>Privacy Policy</Typography> */}
         </Box>
-        <Box>
+        {/* <Box>
           <Typography variant='h4' fontWeight='bold' mb='30px'>Customer Care</Typography>
           <Typography mb='30px'>FAQ</Typography>
           <Typography mb='30px'>Track Your Order</Typography>
           <Typography mb='30px'>Returns & Refunds</Typography>
-        </Box>
+        </Box> */}
         <Box width='clamp(20%, 25%, 30%)'>
-          <Typography variant='h4' fontWeight='bold' mb='30px'>Contact Us</Typography>
+          <Typography variant='h4' mb='30px' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About Me</Typography>
+          {/* <Typography variant='h4' mb='30px'>Contact Me</Typography> */}
           <Typography mb='30px'>Email: jryanreeves@gmail.com</Typography>
           <Typography mb='30px'>@jryanreeves</Typography>
         </Box>

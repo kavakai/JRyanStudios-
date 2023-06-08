@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Badge, Box, IconButton } from '@mui/material';
+import { Badge, Box, IconButton, useTheme } from '@mui/material';
 import { PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { shades } from '../../theme'; 
@@ -10,7 +10,10 @@ import { setIsCartOpen } from '../state/index';
 function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart.cart)
+  const cart = useSelector((state) => state.cart.cart);
+  const { 
+    palette: { neutral }
+  } = useTheme();
 
   return (
     <Box
@@ -18,7 +21,8 @@ function Navbar() {
       alignItems='center'
       width='100%'
       height='60px'
-      backgroundColor='rgba(255, 255, 255, 0.95)'
+      // backgroundColor='rgba(255, 255, 255, 0.95)'
+      backgroundColor={neutral.main}
       color='black'
       position='fixed'
       top='0'
