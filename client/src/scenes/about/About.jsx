@@ -15,10 +15,14 @@ function About() {
             style={{ objectFit: "contain" }}
           />
         </Box>
-        <Box flex="1 1 50%" mb="40px">
-          <Box m="65px 0 25px 0">
-            <Typography sx={{ mt: "20px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit aliquam urna id semper. Duis ante magna, rhoncus nec blandit ultrices, venenatis nec lectus. Vestibulum vel eros id erat maximus cursus. Curabitur quis efficitur enim. Quisque vitae consectetur arcu. Donec elit velit, blandit in auctor in, rhoncus tincidunt ligula. Quisque vulputate, nisl ut tristique egestas, justo magna sollicitudin felis, sit amet tristique leo lorem eget ex. Integer interdum nibh quis tempor accumsan. Nulla justo diam, lacinia vel fermentum et, sodales ut justo. Maecenas finibus consequat bibendum. In imperdiet turpis libero, ornare vehicula nunc gravida vehicula.<br/>
-Sed gravida lacus vitae nibh pellentesque, sit amet bibendum velit cursus. Duis et laoreet nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque feugiat mi nec leo rhoncus, eget tempus lorem hendrerit. Integer maximus mi tempus varius mattis. Aliquam faucibus tristique imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</Typography>
+        <Box flex="1 1 50%">
+          <Box m="55px 0 25px 0">
+            <Typography sx={{ textAlign: 'justify' }}>When I was a kid, my family had a small stained glass window. I was obsessed with the cascading light that one little window could create.  To me, the light created a vortex, linking the outside world with the inside world. It sparked in me pure magic, love, and resource. Since I have found most of my safety lies in the divine outdoors, it was a way to always stay connected. Light is a resource.<br/>
+              <br/>
+              In college, I explored the healing art of colors. It was called Maitri. We would spend hours a day sitting in colored rooms to experience the effects of color on our psyche. The impact was undeniable as particular colors brought different moods, released emotions, physical pain and/or comfort.<br/>
+              <br/>
+              I find my inspiration from our magnificent mother earth. The forests, mountains, the sea - her beauty is forever inspiring. It’s my hope that my artwork brings you more beauty, magic, healing, and inspires more connection to self and others.
+            </Typography>
           </Box>
         </Box>
       </Box>
