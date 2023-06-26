@@ -34,7 +34,7 @@ function Footer() {
             variant='h4'  
             mb='30px' 
             color={shades.secondary[300]}>
-            Website by - Kai Kuller
+              <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='https://www.kai-the-dev.com/' rel='noreferrer' target='_blank'>Website by - Kai Kuller</a>
           </Typography>
         </Box>
         <Box>
@@ -53,7 +53,7 @@ function Footer() {
           {/* <Typography variant='h4' mb='30px'>Contact Me</Typography> */}
           <Typography mb='30px'>Email: jryanreeves@gmail.com</Typography>
           <Typography mb='30px' >
-            <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='https://www.instagram.com/jryanreeves/?hl=en'>@jryanreeves</a>
+            <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='https://www.instagram.com/jryanreeves/?hl=en' rel='noreferrer' target='_blank'>@jryanreeves</a>
           </Typography>
         </Box>
       </Box>
