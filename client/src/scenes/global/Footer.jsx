@@ -52,7 +52,9 @@ function Footer() {
           <Typography variant='h4' mb='30px' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About Me</Typography>
           {/* <Typography variant='h4' mb='30px'>Contact Me</Typography> */}
           <Typography mb='30px'>Email: jryanreeves@gmail.com</Typography>
-          <Typography mb='30px'>@jryanreeves</Typography>
+          <Typography mb='30px' >
+            <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='https://www.instagram.com/jryanreeves/?hl=en'>@jryanreeves</a>
+          </Typography>
         </Box>
       </Box>
     </Box>
