@@ -73,15 +73,15 @@ function MainCarousel() {
             padding='10px'
             borderRadius='5px'
             textAlign='left'
-            backgroundColor='rgb(0, 0, 0, 0.4)'
+            backgroundColor='rgb(255, 255, 255, 0.4)'
             position='absolute'
             top='50%'
             left={isNonMobile ? '10%' : '0'}
             right={isNonMobile ? undefined : '0'}
             margin={isNonMobile ? undefined : '0 auto'}
-            maxWidth={isNonMobile ? undefined : '240px'}
+            maxWidth={isNonMobile ? undefined : '125px'}
           >
-            <Typography color={shades.secondary[200]}>Inspired by Nature</Typography>
+            <Typography color={shades.primary[400]} fontSize={isNonMobile ? '1.3rem' : undefined} >Inspired by Nature</Typography>
             {/* <Typography 
               fontWeight='bold' 
               color={shades.secondary[300]} 

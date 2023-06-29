@@ -26,15 +26,15 @@ function Footer() {
             variant='h4' 
             fontWeight='bold' 
             mb='30px' 
-            color={shades.secondary[500]}
+            color={shades.primary[500]}
           >
             J.Ryan Studios
           </Typography>
           <Typography
             variant='h4'  
             mb='30px' 
-            color={shades.secondary[300]}>
-              <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='https://www.kai-the-dev.com/' rel='noreferrer' target='_blank'>Website by - Kai Kuller</a>
+            color={shades.primary[300]}>
+              <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='https://www.kai-the-dev.com/' rel='noreferrer' target='_blank'>Website by: Kai Kuller</a>
           </Typography>
         </Box>
         <Box>

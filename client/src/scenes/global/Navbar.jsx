@@ -39,7 +39,7 @@ function Navbar() {
         <Box 
           onClick={() => navigate('/')}
           sx={{ '&:hover': { cursor: 'pointer' }}}
-          color={shades.secondary[500]}
+          color={shades.primary[500]}
         >
           J.Ryan Studios
         </Box>
@@ -49,12 +49,14 @@ function Navbar() {
           columnGap='20px'
           zIndex='2'
         >
-          <IconButton sx={{ color: 'black' }}>
+          {/* FUTURE ITEMS */}
+
+          {/* <IconButton sx={{ color: 'black' }}>
             <SearchOutlined />
           </IconButton>
           <IconButton sx={{ color: 'black' }}>
             <PersonOutline />
-          </IconButton>
+          </IconButton> */}
           <Badge 
             badgeContent={cart.length}
             color='secondary'
@@ -76,9 +78,11 @@ function Navbar() {
               <ShoppingBagOutlined />
             </IconButton>
           </Badge>
-          <IconButton sx={{ color: 'black' }}>
+          {/* FUTURE DROPDOWN MENU */}
+
+          {/* <IconButton sx={{ color: 'black' }}>
             <MenuOutlined />
-          </IconButton>
+          </IconButton> */}
         </Box>
       </Box>
     </Box>
