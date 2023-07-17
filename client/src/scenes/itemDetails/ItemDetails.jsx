@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { IconButton, Box, Typography, Button, Tabs, Tab } from "@mui/material";
+import { IconButton, Box, Typography, Button, Tabs, Tab, InputLabel, MenuItem, FormControl, Select, SelectChangeEvent } from "@mui/material";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -88,6 +88,22 @@ function ItemDetails() {
               <IconButton onClick={() => setCount(count + 1)}>
                 <AddIcon />
               </IconButton>
+            </Box>
+            <Box sx={{ minWidth: 120 }} mr="20px" p="2px 5px">
+              <FormControl fullWidth>
+                <InputLabel id="color-label">Color</InputLabel>
+                <Select
+                  labelId="color-label"
+                  id="color"
+                  label="Color"
+                  value={item?.attributes?.color}
+                  onChange={(e) => console.log(e.target.value)}
+                  >
+                  <MenuItem value="red">Red</MenuItem>
+                  <MenuItem value="blue">Blue</MenuItem>
+                  <MenuItem value="green">Green</MenuItem>    
+                </Select>
+              </FormControl>
             </Box>
             <Button
               sx={{
