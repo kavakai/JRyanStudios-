@@ -38,13 +38,12 @@
     "category": {
       "type": "enumeration",
       "enum": [
-        "newArrivals",
-        "bestSellers",
-        "topRated"
+        "feathers",
+        "windowVases",
+        "geometricShapes",
+        "elements",
+        "placesOfInspiration"
       ]
-    },
-    "color": {
-      "type": "string"
     }
   }
 }

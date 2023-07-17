@@ -31,20 +31,27 @@ const ShoppingList = () => {
     getItems();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const topRatedItems = items.filter(
-    (item) => item.attributes.category === "topRated"
+  const feathersItems = items.filter(
+    (item) => item.attributes.category === "feathers"
   );
-  const newArrivalsItems = items.filter(
-    (item) => item.attributes.category === "newArrivals"
+  const windowVasesItems = items.filter(
+    (item) => item.attributes.category === "windowVases"
   );
-  const bestSellersItems = items.filter(
-    (item) => item.attributes.category === "bestSellers"
+  const geometricShapesItems = items.filter(
+    (item) => item.attributes.category === "geometricShapes"
   );
+  const elementsItems = items.filter(
+    (item) => item.attributes.category === "elements"
+  );
+  const placesOfInspirationItems = items.filter(
+    (item) => item.attributes.category === "placesOfInspiration"
+  );
+  
 
   return (
     <Box width="80%" margin="80px auto">
       <Typography variant="h3" textAlign="center">
-        Our Featured <b>Products</b>
+      <b>My Beautiful Products</b>
       </Typography>
       <Tabs
         textColor="primary"
@@ -61,9 +68,11 @@ const ShoppingList = () => {
         }}
       >
         <Tab label="ALL" value="all" />
-        <Tab label="NEW ARRIVALS" value="newArrivals" />
-        <Tab label="BEST SELLERS" value="bestSellers" />
-        <Tab label="TOP RATED" value="topRated" />
+        <Tab label="FEATHERS" value="feathers" />
+        <Tab label="WINDOW VASES" value="windowVases" />
+        <Tab label="GEOMETRIC SHAPES" value="geometricShapes" />
+        <Tab label="ELEMENTS" value="elements" />
+        <Tab label="PLACES OF INSPIRATION" value="placesOfInspiration" />
       </Tabs>
       <Box
         margin="0 auto"
@@ -77,16 +86,24 @@ const ShoppingList = () => {
           items.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
-        {value === "newArrivals" &&
-          newArrivalsItems.map((item) => (
+        {value === "feathers" &&
+          feathersItems.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
-        {value === "bestSellers" &&
-          bestSellersItems.map((item) => (
+        {value === "windowVases" &&
+          windowVasesItems.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
-        {value === "topRated" &&
-          topRatedItems.map((item) => (
+        {value === "geometricShapes" &&
+          geometricShapesItems.map((item) => (
+            <Item item={item} key={`${item.name}-${item.id}`} />
+          ))}
+        {value === "elements" &&
+          elementsItems.map((item) => (
+            <Item item={item} key={`${item.name}-${item.id}`} />
+          ))}
+        {value === "placesOfInspiration" &&
+          placesOfInspirationItems.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
       </Box>
