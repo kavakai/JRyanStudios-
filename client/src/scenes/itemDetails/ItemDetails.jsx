@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { IconButton, Box, Typography, Button, Tabs, Tab, InputLabel, MenuItem, FormControl, Select, SelectChangeEvent } from "@mui/material";
+import { IconButton, Box, Typography, Button, Tabs, Tab, InputLabel, MenuItem, FormControl, Select, SelectChangeEvent, FormHelperText } from "@mui/material";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -60,10 +60,10 @@ function ItemDetails() {
 
         {/* ACTIONS */}
         <Box flex="1 1 50%" mb="40px">
-          <Box display="flex" justifyContent="space-between">
+          {/* <Box display="flex" justifyContent="space-between">
             <Box>Home/Item</Box>
             <Box>Prev Next</Box>
-          </Box>
+          </Box> */}
 
           <Box m="65px 0 25px 0">
             <Typography variant="h3">{item?.attributes?.name}</Typography>
@@ -89,22 +89,31 @@ function ItemDetails() {
                 <AddIcon />
               </IconButton>
             </Box>
+            
+
+            {/* COLOR SELECTOR */}
+
+            {/* {item?.attributes?.color ? */}
             <Box sx={{ minWidth: 120 }} mr="20px" p="2px 5px">
-              <FormControl fullWidth>
+              <FormControl required fullWidth>
                 <InputLabel id="color-label">Color</InputLabel>
                 <Select
                   labelId="color-label"
                   id="color"
                   label="Color"
-                  value={item?.attributes?.color}
-                  onChange={(e) => console.log(e.target.value)}
+                  defaultValue='warm'
+                  onChange={(e) => {
+                    setItem({...item, attributes: {...item.attributes, color: e.target.value}});
+                  }}
                   >
-                  <MenuItem value="red">Red</MenuItem>
-                  <MenuItem value="blue">Blue</MenuItem>
-                  <MenuItem value="green">Green</MenuItem>    
+                  <MenuItem value="warm">Warm</MenuItem>
+                  <MenuItem value="cool">Cool</MenuItem>
+                  <MenuItem value="bright">Bright</MenuItem> 
+                  <MenuItem value="soft">Soft</MenuItem>   
                 </Select>
               </FormControl>
-            </Box>
+            </Box> 
+            {/* : null} */}
             <Button
               sx={{
                 backgroundColor: "#222222",
@@ -133,7 +142,7 @@ function ItemDetails() {
       <Box m="20px 0">
         <Tabs value={value} onChange={handleChange}>
           <Tab label="DESCRIPTION" value="description" />
-          <Tab label="REVIEWS" value="reviews" />
+          {/* <Tab label="REVIEWS" value="reviews" /> */}
         </Tabs>
       </Box>
       <Box display="flex" flexWrap="wrap" gap="15px">

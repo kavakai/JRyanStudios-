@@ -16,6 +16,7 @@ export const cartSlice = createSlice({
     },
    
     addToCart: (state, action) => {
+      console.log(action.payload.item, "item")
       state.cart = [...state.cart, action.payload.item];
     },
     
