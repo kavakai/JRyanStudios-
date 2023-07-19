@@ -68,7 +68,7 @@ function MainCarousel() {
               backgroundAttachment: 'fixed',
             }}
           />
-          <Box
+          {/* <Box
             color='white'
             padding='10px'
             borderRadius='5px'
@@ -80,7 +80,7 @@ function MainCarousel() {
             right={isNonMobile ? undefined : '0'}
             margin={isNonMobile ? undefined : '0 auto'}
             maxWidth={isNonMobile ? undefined : '125px'}
-          >
+          > */}
             {/* <Typography color={shades.primary[400]} fontSize={isNonMobile ? '1.3rem' : undefined} >Inspired by Nature</Typography> */}
             {/* <Typography 
               fontWeight='bold' 
@@ -89,7 +89,7 @@ function MainCarousel() {
             >
               Discover More
             </Typography> */}
-          </Box>
+          {/* </Box> */}
         </Box>
       ))}
     </Carousel>

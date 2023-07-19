@@ -34,7 +34,7 @@ function Footer() {
             variant='h4'  
             mb='30px' 
             color={shades.primary[300]}>
-              <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='https://www.kai-the-dev.com/' rel='noreferrer' target='_blank'>Website by: Kai Kuller</a>
+              <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='https://www.kai-the-dev.com/' rel='noreferrer' target='_blank'>Website by: Kai</a>
           </Typography>
         </Box>
         <Box>
@@ -49,7 +49,7 @@ function Footer() {
           <Typography mb='30px'>Returns & Refunds</Typography>
         </Box> */}
         <Box width='clamp(20%, 25%, 30%)'>
-          <Typography variant='h4' mb='30px' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About Me</Typography>
+          {/* <Typography variant='h4' mb='30px' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About Me</Typography> */}
           {/* <Typography variant='h4' mb='30px'>Contact Me</Typography> */}
           <Typography mb='30px'>Email: jryanreeves@gmail.com</Typography>
           <Typography mb='30px' >

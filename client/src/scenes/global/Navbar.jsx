@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Badge, Box, IconButton, useTheme } from '@mui/material';
+import { Badge, Box, IconButton, useTheme, Typography } from '@mui/material';
 import { PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { shades } from '../../theme'; 
@@ -36,6 +36,13 @@ function Navbar() {
         justifyContent='space-between'
         alignItems='center'
       >
+        <Box
+          ml={-8}
+          display='flex'
+        >
+          <Typography variant='h4' mr='2em' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About Me</Typography>
+          <Typography variant='h4' mr='-2em' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>Stockists</Typography>
+        </Box>
         <Box 
           onClick={() => navigate('/')}
           sx={{ fontSize: 'large', '&:hover': { cursor: 'pointer' }}}
@@ -78,6 +85,7 @@ function Navbar() {
               <ShoppingBagOutlined />
             </IconButton>
           </Badge>
+          
           {/* FUTURE DROPDOWN MENU */}
 
           {/* <IconButton sx={{ color: 'black' }}>
