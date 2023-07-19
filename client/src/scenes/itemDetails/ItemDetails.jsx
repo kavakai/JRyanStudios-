@@ -92,8 +92,7 @@ function ItemDetails() {
             
 
             {/* COLOR SELECTOR */}
-
-            {/* {item?.attributes?.color ? */}
+            {item?.attributes?.colorOptions === 'Yes' ?
             <Box sx={{ minWidth: 120 }} mr="20px" p="2px 5px">
               <FormControl required fullWidth>
                 <InputLabel id="color-label">Color</InputLabel>
@@ -113,7 +112,7 @@ function ItemDetails() {
                 </Select>
               </FormControl>
             </Box> 
-            {/* : null} */}
+            : null} 
             <Button
               sx={{
                 backgroundColor: "#222222",

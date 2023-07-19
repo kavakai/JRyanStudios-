@@ -81,7 +81,7 @@ function MainCarousel() {
             margin={isNonMobile ? undefined : '0 auto'}
             maxWidth={isNonMobile ? undefined : '125px'}
           >
-            <Typography color={shades.primary[400]} fontSize={isNonMobile ? '1.3rem' : undefined} >Inspired by Nature</Typography>
+            {/* <Typography color={shades.primary[400]} fontSize={isNonMobile ? '1.3rem' : undefined} >Inspired by Nature</Typography> */}
             {/* <Typography 
               fontWeight='bold' 
               color={shades.secondary[300]} 
