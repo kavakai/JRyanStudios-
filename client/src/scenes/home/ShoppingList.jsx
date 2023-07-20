@@ -41,7 +41,7 @@ const ShoppingList = () => {
     (item) => item.attributes.category === "geometricShapes"
   );
   const lightCatchersItems = items.filter(
-    (item) => item.attributes.category === "elements"
+    (item) => item.attributes.category === "lightCatchers"
   );
   const placesOfInspirationItems = items.filter(
     (item) => item.attributes.category === "placesOfInspiration"
