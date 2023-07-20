@@ -41,7 +41,7 @@ function Navbar() {
           display='flex'
         >
           <Typography variant='h4' mr='2em' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About Me</Typography>
-          <Typography variant='h4' mr='-2em' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>Stockists</Typography>
+          <Typography variant='h4' mr='-2em' sx={{ cursor: 'pointer' }} onClick={() => navigate('/stockists')}>Stockists</Typography>
         </Box>
         <Box 
           onClick={() => navigate('/')}
