@@ -37,10 +37,10 @@ const ShoppingList = () => {
   const windowVasesItems = items.filter(
     (item) => item.attributes.category === "windowVases"
   );
-  const geometricShapesItems = items.filter(
+  const windowPanelsItems = items.filter(
     (item) => item.attributes.category === "geometricShapes"
   );
-  const elementsItems = items.filter(
+  const lightCatchersItems = items.filter(
     (item) => item.attributes.category === "elements"
   );
   const placesOfInspirationItems = items.filter(
@@ -70,8 +70,8 @@ const ShoppingList = () => {
         <Tab label="ALL" value="all" />
         <Tab label="FEATHERS" value="feathers" />
         <Tab label="WINDOW VASES" value="windowVases" />
-        <Tab label="GEOMETRIC SHAPES" value="geometricShapes" />
-        <Tab label="ELEMENTS" value="elements" />
+        <Tab label="WINDOW PANELS" value="windowPanels" />
+        <Tab label="LIGHT CATCHERS" value="lightCatchers" />
         <Tab label="PLACES OF INSPIRATION" value="placesOfInspiration" />
       </Tabs>
       <Box
@@ -94,12 +94,12 @@ const ShoppingList = () => {
           windowVasesItems.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
-        {value === "geometricShapes" &&
-          geometricShapesItems.map((item) => (
+        {value === "windowPanels" &&
+          windowPanelsItems.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
-        {value === "elements" &&
-          elementsItems.map((item) => (
+        {value === "lightCatchers" &&
+          lightCatchersItems.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
         {value === "placesOfInspiration" &&

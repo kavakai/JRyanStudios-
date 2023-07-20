@@ -27,14 +27,10 @@ function Footer() {
             fontWeight='bold' 
             mb='30px' 
             color={shades.primary[500]}
+            sx={{ cursor: 'pointer' }} 
+            href='#top'
           >
-            J.Ryan Studios
-          </Typography>
-          <Typography
-            variant='h4'  
-            mb='30px' 
-            color={shades.primary[300]}>
-              <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='https://www.kai-the-dev.com/' rel='noreferrer' target='_blank'>Website by: Kai</a>
+            <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='#top'>J.Ryan Studios</a>
           </Typography>
         </Box>
         <Box>
@@ -54,6 +50,11 @@ function Footer() {
           <Typography mb='30px'>Email: jryanreeves@gmail.com</Typography>
           <Typography mb='30px' >
             <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='https://www.instagram.com/jryanreeves/?hl=en' rel='noreferrer' target='_blank'>@jryanreeves</a>
+          </Typography>
+          <Typography
+            variant='h4'   
+            color={shades.primary[200]}>
+              <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='https://www.kai-the-dev.com/' rel='noreferrer' target='_blank'>Website created by: Kai</a>
           </Typography>
         </Box>
       </Box>

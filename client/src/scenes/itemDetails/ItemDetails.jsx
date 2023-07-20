@@ -69,7 +69,7 @@ function ItemDetails() {
             <Typography variant="h3">{item?.attributes?.name}</Typography>
             <Typography>${item?.attributes?.price}</Typography>
             <Typography sx={{ mt: "20px" }}>
-              {item?.attributes?.longDescription}
+              {item?.attributes?.shortDescription}
             </Typography>
           </Box>
 
@@ -126,14 +126,14 @@ function ItemDetails() {
               ADD TO CART
             </Button>
           </Box>
-          <Box>
+          {/* <Box>
             <Box m="20px 0 5px 0" display="flex">
               <FavoriteBorderOutlinedIcon />
               <Typography sx={{ ml: "5px" }}>ADD TO WISHLIST</Typography>
             </Box>
             <Typography>CATEGORIES: {item?.attributes?.category.replace(/([A-Z])/g, " $1")
             .replace(/^./, (str) => str.toUpperCase())}</Typography>
-          </Box>
+          </Box> */}
         </Box>
       </Box>
 

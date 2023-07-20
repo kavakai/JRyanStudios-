@@ -40,8 +40,8 @@
       "enum": [
         "feathers",
         "windowVases",
-        "geometricShapes",
-        "elements",
+        "windowPanels",
+        "lightCatchers",
         "placesOfInspiration"
       ]
     },
