@@ -4,6 +4,7 @@ import  MarkEmailReadOutlinedIcon  from '@mui/icons-material/MarkEmailReadOutlin
 
 function Subscribe() {
   const [email, setEmail] = useState('');
+  
   return (
     <Box width='80%' margin='80px auto' textAlign='center'>
       <IconButton>

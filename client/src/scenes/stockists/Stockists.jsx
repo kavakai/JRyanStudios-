@@ -41,6 +41,7 @@ function Stockists() {
     <Box 
       width="80%" 
       margin="80px auto" 
+      padding={2}
       >
       <img 
         src={heroTextureImports['shutterstock_537796069.jpg']}
@@ -50,8 +51,17 @@ function Stockists() {
           height: '500px',
           objectFit: 'cover',
           backgroundAttachment: 'fixed',
+          marginBottom: '20px'
         }}/>
-      {places}
+        <Box
+          margin="0 auto"
+          display="grid"
+          gridTemplateColumns="repeat(auto-fill, 300px)"
+          justifyContent="space-around"
+          rowGap="20px"
+          columnGap="1.33%">
+            {places}
+        </Box>
     </Box>
   )
 }

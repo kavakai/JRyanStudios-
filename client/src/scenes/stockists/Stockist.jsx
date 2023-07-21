@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 
 function Stockist({ place }) {
-  const [isHovered, setIsHovered] = useState(false);
 
   const { storeName, location, storeLogo, link } = place.attributes;
   const {
@@ -13,24 +12,30 @@ function Stockist({ place }) {
   
   return (
     <Box 
-        onMouseOver={() => setIsHovered(true)}
-        onMouseOut={() => setIsHovered(false)}>
-        <Typography 
-          sx={isHovered ? { mt: '20px', transform: 'scale(1.1)', display:'flex', flexDirection: 'column' } : { mt: '20px', display:'flex', flexDirection: 'column', alignItems: 'center'  }}
-          variant="h3" 
-          textAlign="center">
-          
-          <img 
-            src={`http://localhost:1337${url}`} 
-            alt={`${storeName}`}
-            width='70px'/>
-
-          <a style={{ cursor: 'pointer', 'text-decoration': 'none', 'color': 'inherit' }} rel='noreferrer' target='_blank' href={link}>
-            {storeName}
+      sx={{
+        '&:hover':{ transform: 'scale(1.1)' },
+        cursor: 'pointer'
+      }}
+      display='flex'
+      width='300px'
+      flexDirection='column'
+      justifyContent='center'
+      alignItems='center'
+      border='solid 1px black'
+      padding={2}
+      onClick={() => window.open(link, '_blank')}
+      >
+      <img 
+        src={`http://localhost:1337${url}`} 
+        alt={`${storeName}`}
+        width='70px'/>
+      <Typography 
+        sx={{ mt: '20px' }}
+        variant="h3" 
+        textAlign="center">
+          {storeName}
             <br/>
-            {location}
-          </a> 
-        
+          {location}
         </Typography>
       </Box>
   )
