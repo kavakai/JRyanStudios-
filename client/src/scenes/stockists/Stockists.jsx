@@ -10,15 +10,15 @@ function Stockists() {
   const dispatch = useDispatch();
   const stockers = useSelector((state) => state.cart.stockists);
 
-  const getStores = async () => {
+  async function getStores() {
     const stores = await fetch(
-      "http://localhost:1337/api/stockists?populate=image",
+      "http://localhost:1337/api/stockists?populate=image/",
       { method: "GET" }
     );
     const data = await stores.json();
-    console.log(stores, 'storesJson.data')
     dispatch(setStockists(data.data));
   }
+  console.log(stockers, "stockers")
 
   useEffect(() => {
     getStores();
@@ -34,9 +34,9 @@ function Stockists() {
     require.context('../../assets', false, /\.(png|jpe?g|svg)$/)
   );
 
-  // const places = stockers.map((place) => (
-  //   <Stockist key={Date.Now()} place={place} />
-  // ));
+  const places = stockers.map((place) => (
+    <Stockist key={place.id} place={place} />
+  ));
 
   return (
     <Box 
@@ -52,8 +52,7 @@ function Stockists() {
           objectFit: 'cover',
           backgroundAttachment: 'fixed',
         }}/>
-      {console.log(stockers, 'stockers')}
-      {/* {places} */}
+      {places}
     </Box>
   )
 }

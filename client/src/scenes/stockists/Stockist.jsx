@@ -3,6 +3,14 @@ import { Box, Typography } from '@mui/material';
 
 function Stockist({ place }) {
   const [isHovered, setIsHovered] = useState(false);
+
+  const { storeName, location, storeLogo, link } = place.attributes;
+  // const {
+  //   data: {
+  //     attributes: { url }
+  //   },
+  // } = image;
+  
   return (
     <Box 
         onMouseOver={() => setIsHovered(true)}
@@ -12,12 +20,11 @@ function Stockist({ place }) {
           variant="h3" 
           textAlign="center">
 
-          <a style={{ cursor: 'pointer', 'text-decoration': 'none', 'color': 'inherit' }} rel='noreferrer' target='_blank' href='https://ojosparesorts.com/ojo-santa-fe/'>
-            {place.name}
+          <a style={{ cursor: 'pointer', 'text-decoration': 'none', 'color': 'inherit' }} rel='noreferrer' target='_blank' href={link}>
+            {storeName}
             <br/>
-            {place.location}
+            {location}
           </a> 
-
         </Typography>
       </Box>
   )
