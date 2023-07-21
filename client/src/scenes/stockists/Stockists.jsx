@@ -1,5 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import Stockist from './Stockist';
+
 
 function Stockists() {
  
@@ -13,8 +15,15 @@ function Stockists() {
     require.context('../../assets', false, /\.(png|jpe?g|svg)$/)
   );
 
+  const places = stockers.map(place => {
+    <Stockist key={Date.Now()} place={place} />
+  })
+
   return (
-    <Box width="80%" margin="80px auto">
+    <Box 
+      width="80%" 
+      margin="80px auto" 
+      >
       <img 
         src={heroTextureImports['shutterstock_537796069.jpg']}
         alt={'alt'}
@@ -24,9 +33,8 @@ function Stockists() {
           objectFit: 'cover',
           backgroundAttachment: 'fixed',
         }}/>
-      <Typography variant="h3" textAlign="center">Ojo Santa Fe</Typography>
-      <Typography variant="h3" textAlign="center">Georgia Okeefe Museum</Typography>
-      <Typography variant="h3" textAlign="center">Ojo Caliente</Typography>
+      
+      {places}
     </Box>
   )
 }

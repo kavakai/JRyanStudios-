@@ -28,7 +28,6 @@ function Footer() {
             mb='30px' 
             color={shades.primary[500]}
             sx={{ cursor: 'pointer' }} 
-            href='#top'
           >
             <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='#top'>J Ryan Studios</a>
           </Typography>
