@@ -16,6 +16,7 @@ function ItemDetails() {
   const [count, setCount] = useState(1);
   const [item, setItem] = useState(null);
   const [items, setItems] = useState([]);
+  const [mainImgUrl, setMainImgUrl] = useState(null);
 
   const handleChange = (e, newValue) => {
     setValue(newValue);
@@ -28,6 +29,7 @@ function ItemDetails() {
     );
     const itemJson = await item.json();
     setItem(itemJson.data);
+    setMainImgUrl(itemJson.data.attributes.image.data.attributes.url)
   }
 
   async function getItems() {
@@ -45,10 +47,10 @@ function ItemDetails() {
   }, [itemId]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Box width="80%" m="80px auto">
+    <Box width="90%" m="80px auto">
       <Box display="flex" flexWrap="wrap" columnGap="40px">
         {/* IMG SELECTOR */}
-        <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+        <ImageList sx={{ width: 200, height: 500 }} cols={1} colHeight={164}>
           {item?.attributes?.thumbnails.data.map((item) => (
             <ImageListItem key={item?.attributes?.name}>
               <img
@@ -56,17 +58,18 @@ function ItemDetails() {
                 srcSet={`http://localhost:1337${item?.attributes?.url}`}
                 alt={item?.attributes?.name}
                 loading="lazy"
+                onClick={() => setMainImgUrl(item?.attributes?.url)}
               />
             </ImageListItem>
           ))}
         </ImageList>
         {/* IMAGES */}
-        <Box flex="1 1 30%" mb="40px">
+        <Box flex="2 1 25%" mb="40px">
           <img
             alt={item?.name}
             width="100%"
             height="100%"
-            src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.url}`}
+            src={`http://localhost:1337${mainImgUrl}`}
             style={{ objectFit: "contain" }}
           />
         </Box>
