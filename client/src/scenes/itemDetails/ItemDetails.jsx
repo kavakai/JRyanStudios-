@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { IconButton, Box, Typography, Button, Tabs, Tab, InputLabel, MenuItem, FormControl, Select, SelectChangeEvent, FormHelperText } from "@mui/material";
+import { IconButton, Box, Typography, Button, Tabs, Tab, InputLabel, MenuItem, FormControl, Select, SelectChangeEvent, FormHelperText, ImageList, ImageListItem } from "@mui/material";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -23,7 +23,7 @@ function ItemDetails() {
   
   async function getItem() {
     const item = await fetch(
-      `http://localhost:1337/api/items/${itemId}?populate=image`,
+      `http://localhost:1337/api/items/${itemId}?populate=*`,
       {method: 'GET'}
     );
     const itemJson = await item.json();
@@ -47,8 +47,21 @@ function ItemDetails() {
   return (
     <Box width="80%" m="80px auto">
       <Box display="flex" flexWrap="wrap" columnGap="40px">
+        {/* IMG SELECTOR */}
+        <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+          {item?.attributes?.thumbnails.data.map((item) => (
+            <ImageListItem key={item?.attributes?.name}>
+              <img
+                src={`http://localhost:1337${item?.attributes?.url}`}
+                srcSet={`http://localhost:1337${item?.attributes?.url}`}
+                alt={item?.attributes?.name}
+                loading="lazy"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
         {/* IMAGES */}
-        <Box flex="1 1 40%" mb="40px">
+        <Box flex="1 1 30%" mb="40px">
           <img
             alt={item?.name}
             width="100%"
@@ -57,7 +70,6 @@ function ItemDetails() {
             style={{ objectFit: "contain" }}
           />
         </Box>
-
         {/* ACTIONS */}
         <Box flex="1 1 50%" mb="40px">
           {/* <Box display="flex" justifyContent="space-between">

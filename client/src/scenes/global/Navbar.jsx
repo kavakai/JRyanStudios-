@@ -45,7 +45,7 @@ function Navbar() {
         </Box>
         <Box 
           onClick={() => navigate('/')}
-          sx={{ fontSize: 'large', '&:hover': { cursor: 'pointer' }}}
+          sx={{ fontSize: 'x-large', '&:hover': { cursor: 'pointer' }}}
           color={shades.primary[500]}
         >
           J Ryan Studios
