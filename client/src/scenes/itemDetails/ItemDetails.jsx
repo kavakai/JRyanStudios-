@@ -29,12 +29,15 @@ function ItemDetails() {
     );
     const itemJson = await item.json();
     setItem(itemJson.data);
-    setMainImgUrl(itemJson.data.attributes.thumbnails.data[0].attributes.url)
+
+    itemJson.data.attributes.thumbnails.data
+    ? setMainImgUrl(itemJson.data.attributes.thumbnails.data[0].attributes.url)
+    : setMainImgUrl(itemJson.data.attributes.image.data.attributes.url);
   }
 
   async function getItems() {
     const items = await fetch(
-      "http://localhost:1337/api/items?populate=image",
+      "http://localhost:1337/api/items?populate=*",
       { method: "GET" }
     );
     const itemsJson = await items.json();
@@ -49,7 +52,9 @@ function ItemDetails() {
   return (
     <Box width="90%" m="80px auto">
       <Box display="flex" flexWrap="wrap" columnGap="40px">
-        {/* IMG SELECTOR */}
+        
+        {/* THUMBNAIL SELECTOR */}
+        {item?.attributes?.thumbnails.data ? 
         <ImageList sx={{ width: 200, height: 500 }} cols={1} colHeight={164}>
           {item?.attributes?.thumbnails.data.map((item) => (
             <ImageListItem key={item?.attributes?.name}>
@@ -59,10 +64,13 @@ function ItemDetails() {
                 alt={item?.attributes?.name}
                 loading="lazy"
                 onClick={() => setMainImgUrl(item?.attributes?.url)}
+                style={{ cursor: "pointer" }} 
               />
             </ImageListItem>
           ))}
         </ImageList>
+        : null}
+       
         {/* IMAGES */}
         <Box flex="2 1 25%" mb="40px">
           <img
