@@ -107,7 +107,7 @@ function ItemDetails() {
             
 
             {/* COLOR SELECTOR */}
-            {item?.attributes?.colorOptions === 'Yes' ?
+            {item?.attributes?.colorChoices ?
             <Box sx={{ minWidth: 120 }} mr="20px" p="2px 5px">
               <FormControl required fullWidth>
                 <InputLabel id="color-label">Color</InputLabel>
@@ -115,7 +115,7 @@ function ItemDetails() {
                   labelId="color-label"
                   id="color"
                   label="Color"
-                  defaultValue='warm'
+                  defaultValue={item?.attributes?.colorChoices[0]}
                   onChange={(e) => {
                     setItem({...item, attributes: {...item.attributes, color: e.target.value}});
                   }}
