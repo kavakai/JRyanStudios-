@@ -53,14 +53,28 @@
       ]
     },
     "thumbnails": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
+      ]
+    },
+    "colorChoices": {
+      "type": "customField",
+      "options": [
+        "Red             ",
+        "Orange                 ",
+        "Yellow             ",
+        "Green                  ",
+        "Blue                            ",
+        "Purple                  ",
+        "Neutral    "
       ],
-      "type": "media",
-      "multiple": true
+      "customField": "plugin::multi-select.multi-select"
     }
   }
 }

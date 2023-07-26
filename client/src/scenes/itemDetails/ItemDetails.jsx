@@ -29,7 +29,7 @@ function ItemDetails() {
     );
     const itemJson = await item.json();
     setItem(itemJson.data);
-    setMainImgUrl(itemJson.data.attributes.image.data.attributes.url)
+    setMainImgUrl(itemJson.data.attributes.thumbnails.data[0].attributes.url)
   }
 
   async function getItems() {
@@ -120,10 +120,9 @@ function ItemDetails() {
                     setItem({...item, attributes: {...item.attributes, color: e.target.value}});
                   }}
                   >
-                  <MenuItem value="warm">Warm</MenuItem>
-                  <MenuItem value="cool">Cool</MenuItem>
-                  <MenuItem value="bright">Bright</MenuItem> 
-                  <MenuItem value="soft">Soft</MenuItem>   
+                    {item.attributes.colorChoices.map((color) => (
+                      <MenuItem value={color}>{color}</MenuItem>
+                    ))}
                 </Select>
               </FormControl>
             </Box> 
