@@ -16,7 +16,7 @@ const Item = ({ item, width }) => {
     palette: { neutral },
   } = useTheme();
 
-  const { category, price, name, image } = item.attributes;
+  const { category, price, name, image, colorChoices } = item.attributes;
   const {
     data: {
       attributes: { url }
@@ -38,7 +38,8 @@ const Item = ({ item, width }) => {
           onClick={() => navigate(`/item/${item.id}`)}
           style={{ cursor: "pointer" }}
         />
-        <Box
+        {!colorChoices ? 
+          <Box
           display={isHovered ? "block" : "none"}
           position="absolute"
           bottom="10%"
@@ -70,7 +71,9 @@ const Item = ({ item, width }) => {
               Add to Cart
             </Button>
           </Box>
-        </Box>
+        </Box> :
+        null  
+        }
       </Box>
 
       <Box mt="3px">
