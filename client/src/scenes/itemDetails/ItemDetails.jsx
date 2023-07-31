@@ -68,8 +68,7 @@ function ItemDetails() {
               />
             </ImageListItem>
           ))}
-        </ImageList>
-        : null}
+        </ImageList> : null}
        
         {/* IMAGES */}
         <Box flex="2 1 25%" mb="40px">
@@ -161,10 +160,11 @@ function ItemDetails() {
 
       {/* INFORMATION */}
       <Box m="20px 0">
+      {item?.attributes?.longDescription &&
         <Tabs value={value} onChange={handleChange}>
           <Tab label="DESCRIPTION" value="description" />
           {/* <Tab label="REVIEWS" value="reviews" /> */}
-        </Tabs>
+        </Tabs>}
       </Box>
       <Box display="flex" flexWrap="wrap" gap="15px">
         {value === "description" && (

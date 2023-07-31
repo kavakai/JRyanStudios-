@@ -72,7 +72,11 @@
         "Green                  ",
         "Blue                            ",
         "Purple                  ",
-        "Neutral    "
+        "Neutral    ",
+        "Warm",
+        "Cool",
+        "Bright",
+        "Soft"
       ],
       "customField": "plugin::multi-select.multi-select"
     }
