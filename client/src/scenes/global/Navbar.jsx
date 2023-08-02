@@ -5,6 +5,7 @@ import { PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOutlined } from
 import { useNavigate } from 'react-router-dom';
 import { shades } from '../../theme'; 
 import { setIsCartOpen } from '../state/index';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 
 function Navbar() {
@@ -14,6 +15,8 @@ function Navbar() {
   const { 
     palette: { neutral }
   } = useTheme();
+  const isNonMobile = useMediaQuery('(min-width: 600px)')
+
 
   return (
     <Box
@@ -48,7 +51,7 @@ function Navbar() {
           sx={{ fontSize: 'x-large', '&:hover': { cursor: 'pointer' }}}
           color={shades.primary[500]}
         >
-          <b>J Ryan Studios</b>
+          J Ryan Studios
         </Box>
         <Box 
           display='flex'
