@@ -119,6 +119,7 @@ function CartMenu() {
               <Typography fontWeight='bold'>SUBTOTAL</Typography>
               <Typography fontWeight='bold'>${totalPrice}</Typography>
             </FlexBox>
+            {cart.length ? 
             <Button
               sx={{
                 backgroundColor: shades.primary[400],
@@ -132,7 +133,8 @@ function CartMenu() {
                 navigate('/checkout');
                 dispatch(setIsCartOpen({}));
               }}
-            >CHECKOUT</Button>
+            >CHECKOUT</Button> 
+            : <Typography fontWeight='bold' variant='h3'>Go Shop and Buy Some Glass</Typography>}
           </Box>
         </Box>
       </Box>

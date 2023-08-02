@@ -39,7 +39,69 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
         mode: 'payment',
         success_url: 'http://localhost:3000/checkout/success',
         cancel_url: 'http://localhost:3000',
-        line_items: lineItems
+        line_items: lineItems,
+        shipping_options: [
+          {
+            shipping_rate_data: {
+              type: 'fixed_amount',
+              fixed_amount: {
+                amount: 1200,
+                currency: 'usd',
+              },
+              display_name: 'Flat rate',
+              delivery_estimate: {
+                minimum: {
+                  unit: 'business_day',
+                  value: 5,
+                },
+                maximum: {
+                  unit: 'business_day',
+                  value: 7,
+                },
+              },
+            },
+          },
+          // {
+          //   shipping_rate_data: {
+          //     type: 'fixed_amount',
+          //     fixed_amount: {
+          //       amount: 2500,
+          //       currency: 'usd',
+          //     },
+          //     display_name: 'Priority shipping',
+          //     delivery_estimate: {
+          //       minimum: {
+          //         unit: 'business_day',
+          //         value: 3,
+          //       },
+          //       maximum: {
+          //         unit: 'business_day',
+          //         value: 5,
+          //       },
+          //     },
+          //   },
+          // },
+          // {
+          //   shipping_rate_data: {
+          //     type: 'fixed_amount',
+          //     fixed_amount: {
+          //       amount: 3500,
+          //       currency: 'usd',
+          //     },
+          //     display_name: 'Next day shipping',
+          //     delivery_estimate: {
+          //       minimum: {
+          //         unit: 'business_day',
+          //         value: 1,
+          //       },
+          //       maximum: {
+          //         unit: 'business_day',
+          //         value: 1,
+          //       },
+          //     },
+          //   },
+          // },
+        ],
       });
 
       // create item
