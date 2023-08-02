@@ -38,7 +38,7 @@ const ShoppingList = () => {
     (item) => item.attributes.category === "windowVases"
   );
   const windowPanelsItems = items.filter(
-    (item) => item.attributes.category === "geometricShapes"
+    (item) => item.attributes.category === "windowPanels"
   );
   const lightCatchersItems = items.filter(
     (item) => item.attributes.category === "lightCatchers"
