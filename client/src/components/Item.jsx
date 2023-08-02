@@ -36,7 +36,7 @@ const Item = ({ item, width }) => {
           // height="400px"
           src={`http://localhost:1337${url}`}
           onClick={() => navigate(`/item/${item.id}`)}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", boxShadow: '5px 5px 5px #c5c2c2'  }}
         />
         {!colorChoices ? 
           <Box

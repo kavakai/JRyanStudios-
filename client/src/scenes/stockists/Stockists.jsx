@@ -44,7 +44,7 @@ function Stockists() {
       padding={2}
       >
       <img 
-        src={heroTextureImports['shutterstock_537796069.jpg']}
+        src={heroTextureImports['rainbow_light_img.jpeg']}
         alt={'alt'}
         style={{
           width: '100%',

@@ -48,7 +48,7 @@ function Navbar() {
           sx={{ fontSize: 'x-large', '&:hover': { cursor: 'pointer' }}}
           color={shades.primary[500]}
         >
-          J Ryan Studios
+          <b>J Ryan Studios</b>
         </Box>
         <Box 
           display='flex'

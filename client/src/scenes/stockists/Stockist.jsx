@@ -13,6 +13,7 @@ function Stockist({ place }) {
   return (
     <Box 
       sx={{
+        boxShadow: '5px 5px 5px #c5c2c2',
         '&:hover':{ transform: 'scale(1.1)' },
         cursor: 'pointer'
       }}

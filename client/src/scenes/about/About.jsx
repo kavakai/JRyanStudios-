@@ -12,7 +12,7 @@ function About() {
             width="100%"
             height="100%"
             src={image}
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "contain", boxShadow: '5px 5px 5px #c5c2c2' }}
           />
         </Box>
         <Box flex="1 1 50%">

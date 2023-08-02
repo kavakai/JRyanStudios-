@@ -3,6 +3,7 @@ import { useTheme } from '@mui/material';
 import { Box, Typography } from '@mui/material';
 import { shades } from '../../theme';
 import { useNavigate } from 'react-router-dom';
+import logo from '../../logo/logo.png'
 
 function Footer() {
   const { 
@@ -13,7 +14,7 @@ function Footer() {
   return (
     <Box mt='70px' p='40px 0' backgroundColor={neutral.light}>
       <Box
-        width='80%'
+        width='90%'
         m='auto'
         display='flex'
         justifyContent='space-between'
@@ -21,7 +22,8 @@ function Footer() {
         rowGap='30px'
         columnGap='clamp(20px, 30px, 40px)'
       >
-        <Box width='clamp(20%, 30%, 40%)'>
+        {/* <Box width='clamp(20%, 30%, 40%)'> */}
+        <Box>
           <Typography 
             variant='h4' 
             fontWeight='bold' 
@@ -33,17 +35,21 @@ function Footer() {
           </Typography>
         </Box>
         <Box>
-          {/* <Typography variant='h4' fontWeight='bold' mb='30px' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About Me</Typography> */}
-          {/* <Typography mb='30px'>Terms and Conditions</Typography>
-          <Typography mb='30px'>Privacy Policy</Typography> */}
+          <img src={logo} alt='logo' width='150px' height='150px' style={{ borderRadius: '5px', boxShadow: '5px 5px 5px #c5c2c2' }}/>
         </Box>
+        {/* <Box>
+          <Typography variant='h4' fontWeight='bold' mb='30px' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About Me</Typography>
+          <Typography mb='30px'>Terms and Conditions</Typography>
+          <Typography mb='30px'>Privacy Policy</Typography>
+        </Box> */}
         {/* <Box>
           <Typography variant='h4' fontWeight='bold' mb='30px'>Customer Care</Typography>
           <Typography mb='30px'>FAQ</Typography>
           <Typography mb='30px'>Track Your Order</Typography>
           <Typography mb='30px'>Returns & Refunds</Typography>
         </Box> */}
-        <Box width='clamp(20%, 25%, 30%)'>
+        {/* <Box width='clamp(20%, 25%, 30%)'> */}
+        <Box>
           {/* <Typography variant='h4' mb='30px' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About Me</Typography> */}
           {/* <Typography variant='h4' mb='30px'>Contact Me</Typography> */}
           <Typography mb='30px'>Email: jryanreeves@gmail.com</Typography>
