@@ -33,7 +33,7 @@ function Navbar() {
       zIndex='1'
     >
       <Box 
-        width='80%'
+        width='83%'
         margin='auto'
         display='flex'
         justifyContent='space-between'
@@ -48,7 +48,7 @@ function Navbar() {
         </Box>
         <Box 
           onClick={() => navigate('/')}
-          sx={{ fontSize: 'x-large', '&:hover': { cursor: 'pointer' }}}
+          sx={{ mr: '40px', fontSize: 'x-large', '&:hover': { cursor: 'pointer' }}}
           color={shades.primary[500]}
         >
           J Ryan Studios
