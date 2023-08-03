@@ -37,6 +37,7 @@ function Footer() {
           >
             <a style={{ 'text-decoration': 'none', 'color': 'inherit' }} href='#top'>J Ryan Studios</a>
           </Typography>
+          <Typography>All Items Handmade in Santa Fe, NM</Typography>
         </Box>
         <Box>
           <img src={logo} alt='logo' width={isNonMobile ? '150px' : '80px'} height={isNonMobile ? '150px' : '80px'} style={{ borderRadius: '5px', boxShadow: '5px 5px 5px #c5c2c2' }}/>
