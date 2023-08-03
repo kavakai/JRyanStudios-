@@ -40,16 +40,28 @@ function Navbar() {
         alignItems='center'
       >
         <Box
-          ml={-8}
+          ml={isNonMobile ? -8 : -4}
           display='flex'
         >
-          <Typography variant='h4' mr='2em' sx={{ cursor: 'pointer' }} onClick={() => navigate('/about')}>About Me</Typography>
-          <Typography variant='h4' mr='-2em' sx={{ cursor: 'pointer' }} onClick={() => navigate('/stockists')}>Stockists</Typography>
+          <Typography 
+            variant='h4' 
+            mr={isNonMobile ? '2em' : '.5em'}
+            fontSize={isNonMobile ? null : '12px'} 
+            sx={{ cursor: 'pointer' }} 
+            onClick={() => navigate('/about')}>About Me</Typography>
+          <Typography 
+            variant='h4' 
+            mr='-2em' 
+            fontSize={isNonMobile ? null : '12px'} 
+            sx={{ cursor: 'pointer' }} 
+            onClick={() => navigate('/stockists')}>Stockists</Typography>
         </Box>
         <Box 
           onClick={() => navigate('/')}
-          sx={{ mr: '40px', fontSize: 'x-large', '&:hover': { cursor: 'pointer' }}}
+          sx={{ '&:hover': { cursor: 'pointer' }}}
           color={shades.primary[500]}
+          fontSize={isNonMobile ? 'x-large' : 'large'}
+          mr='40px' 
         >
           J Ryan Studios
         </Box>
