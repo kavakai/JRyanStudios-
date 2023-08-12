@@ -27,7 +27,7 @@ function Stockist({ place }) {
       onClick={() => window.open(link, '_blank')}
       >
       <img 
-        src={`http://localhost:1337${url}`} 
+        src={`https://classic-novelty-bafec44cf4.strapiapp.com/${url}`} 
         alt={`${storeName}`}
         width='70px'/>
       <Typography 

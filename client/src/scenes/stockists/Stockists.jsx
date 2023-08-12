@@ -12,7 +12,7 @@ function Stockists() {
 
   async function getStores() {
     const stores = await fetch(
-      "http://localhost:1337/api/stockists?populate=*",
+      "https://classic-novelty-bafec44cf4.strapiapp.com/api/stockists?populate=*",
       { method: "GET" }
     );
     const data = await stores.json();
