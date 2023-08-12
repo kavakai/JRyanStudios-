@@ -129,7 +129,7 @@ function Checkout() {
       }))
     };
 
-    const response = await fetch('http://localhost:1337/api/orders', {
+    const response = await fetch('https://ethical-book-fd7dfa7caf.strapiapp.com/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify(requestBody)

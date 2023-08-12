@@ -24,7 +24,7 @@ function ItemDetails() {
   
   async function getItem() {
     const item = await fetch(
-      `http://localhost:1337/api/items/${itemId}?populate=*`,
+      `https://ethical-book-fd7dfa7caf.strapiapp.com/items/${itemId}?populate=*`,
       {method: 'GET'}
     );
     const itemJson = await item.json();
@@ -37,7 +37,7 @@ function ItemDetails() {
 
   async function getItems() {
     const items = await fetch(
-      "http://localhost:1337/api/items?populate=*",
+      "https://ethical-book-fd7dfa7caf.strapiapp.com/items?populate=*",
       { method: "GET" }
     );
     const itemsJson = await items.json();
@@ -59,8 +59,8 @@ function ItemDetails() {
           {item?.attributes?.thumbnails.data.map((item) => (
             <ImageListItem key={item?.attributes?.name}>
               <img
-                src={`http://localhost:1337${item?.attributes?.url}`}
-                srcSet={`http://localhost:1337${item?.attributes?.url}`}
+                src={`https://ethical-book-fd7dfa7caf.strapiapp.com/${item?.attributes?.url}`}
+                srcSet={`https://ethical-book-fd7dfa7caf.strapiapp.com/${item?.attributes?.url}`}
                 alt={item?.attributes?.name}
                 loading="lazy"
                 onClick={() => setMainImgUrl(item?.attributes?.url)}
@@ -76,7 +76,7 @@ function ItemDetails() {
             alt={item?.name}
             width="100%"
             height="100%"
-            src={`http://localhost:1337${mainImgUrl}`}
+            src={`https://ethical-book-fd7dfa7caf.strapiapp.com/${mainImgUrl}`}
             style={{ objectFit: "contain" }}
           />
         </Box>
