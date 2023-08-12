@@ -34,7 +34,7 @@ const Item = ({ item, width }) => {
           alt={item.name}
           width="300px"
           // height="400px"
-          src={`https://ethical-book-fd7dfa7caf.strapiapp.com/${url}`}
+          src={`http://localhost:1337${url}`}
           onClick={() => navigate(`/item/${item.id}`)}
           style={{ cursor: "pointer", boxShadow: '5px 5px 5px #c5c2c2'  }}
         />

@@ -27,7 +27,7 @@ function Stockist({ place }) {
       onClick={() => window.open(link, '_blank')}
       >
       <img 
-        src={`https://ethical-book-fd7dfa7caf.strapiapp.com/${url}`} 
+        src={`http://localhost:1337${url}`} 
         alt={`${storeName}`}
         width='70px'/>
       <Typography 

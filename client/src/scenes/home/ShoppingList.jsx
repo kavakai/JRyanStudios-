@@ -20,7 +20,7 @@ const ShoppingList = () => {
 
   async function getItems() {
     const items = await fetch(
-      "https://ethical-book-fd7dfa7caf.strapiapp.com/items?sort[0]=category&sort[1]=name&populate=*",
+      "http://localhost:1337/api/items?sort[0]=category&sort[1]=name&populate=*",
       { method: "GET" }
     );
     const itemsJson = await items.json();
