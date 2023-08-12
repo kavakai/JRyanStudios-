@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import image from '/Users/kaikuller/Projects/StainGlass2/StainGlass2/client/src/profile-pic/IMG_0451.jpg'
+import image from '../../profile-pic/IMG_0451.jpg'
 
 function About() {
   return (
