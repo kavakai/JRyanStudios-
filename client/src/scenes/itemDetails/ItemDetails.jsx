@@ -24,7 +24,7 @@ function ItemDetails() {
   
   async function getItem() {
     const item = await fetch(
-      `https://classic-novelty-bafec44cf4.strapiapp.com/api/items/${itemId}?populate=*`,
+      `https://classic-novelty-bafec44cf4.strapiapp.com/api/items/${itemId}?populate=deep`,
       {method: 'GET'}
     );
     const itemJson = await item.json();
@@ -37,7 +37,7 @@ function ItemDetails() {
 
   async function getItems() {
     const items = await fetch(
-      "https://classic-novelty-bafec44cf4.strapiapp.com/api/items?populate=*",
+      "https://classic-novelty-bafec44cf4.strapiapp.com/api/items?populate=deep",
       { method: "GET" }
     );
     const itemsJson = await items.json();
@@ -59,8 +59,8 @@ function ItemDetails() {
           {item?.attributes?.thumbnails.data.map((item) => (
             <ImageListItem key={item?.attributes?.name}>
               <img
-                src={`https://classic-novelty-bafec44cf4.strapiapp.com/${item?.attributes?.url}`}
-                srcSet={`https://classic-novelty-bafec44cf4.strapiapp.com/${item?.attributes?.url}`}
+                src={item?.attributes?.url}
+                srcSet={item?.attributes?.url}
                 alt={item?.attributes?.name}
                 loading="lazy"
                 onClick={() => setMainImgUrl(item?.attributes?.url)}
@@ -76,7 +76,7 @@ function ItemDetails() {
             alt={item?.name}
             width="100%"
             height="100%"
-            src={`https://classic-novelty-bafec44cf4.strapiapp.com/${mainImgUrl}`}
+            src={mainImgUrl}
             style={{ objectFit: "contain" }}
           />
         </Box>

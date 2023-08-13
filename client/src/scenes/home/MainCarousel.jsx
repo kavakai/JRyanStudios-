@@ -57,6 +57,7 @@ function MainCarousel() {
       )}
     >
       {Object.values(heroTextureImports).map((texture, index) => (
+        console.log(texture, 'texture'),
         <Box key={`carousel-image-${index}`}>
           <img 
             src={texture}
