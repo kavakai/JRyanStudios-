@@ -47,6 +47,7 @@ const ShoppingList = () => {
     (item) => item.attributes.category === "placesOfInspiration"
   );
   
+  console.log(items, 'items')
 
   return (
     <Box width="80%" margin="80px auto">
