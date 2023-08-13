@@ -20,7 +20,7 @@ const ShoppingList = () => {
 
   async function getItems() {
     const items = await fetch(
-      "https://classic-novelty-bafec44cf4.strapiapp.com/api/items?sort[0]=category&sort[1]=name&populate=image",
+      "https://classic-novelty-bafec44cf4.strapiapp.com/api/items?sort[0]=category&sort[1]=name&populate=deep",
       { method: "GET" }
     );
     const itemsJson = await items.json();
