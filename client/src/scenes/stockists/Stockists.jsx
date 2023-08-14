@@ -9,6 +9,7 @@ import { setStockists } from "../../scenes/state";
 function Stockists() {
   const dispatch = useDispatch();
   const stockers = useSelector((state) => state.cart.stockists);
+  const heroBannerImages = useSelector((state) => state.cart.heroBanner);
 
   async function getStores() {
     const stores = await fetch(
@@ -22,22 +23,10 @@ function Stockists() {
   useEffect(() => {
     getStores();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
- 
-  const importAll = (r) => 
-    r.keys().reduce((acc, item) => {
-    acc[item.replace("./", "")] = r(item);
-    return acc;
-  }, {});
-
-  const heroTextureImports = importAll(
-    require.context('../../assets', false, /\.(png|jpe?g|svg)$/)
-  );
 
   const places = stockers.map((place) => (
     <Stockist key={place.id} place={place} />
   ));
-
-  console.log(heroTextureImports, 'heroTextureImports')
 
   return (
     <Box 
@@ -46,7 +35,7 @@ function Stockists() {
       padding={2}
       >
       <img 
-        src={heroTextureImports['rainbow_light_img.jpeg']}
+        src={heroBannerImages['rainbow_light_img.jpeg'].data.attributes.url}
         alt={'alt'}
         style={{
           width: '100%',
