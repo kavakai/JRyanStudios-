@@ -128,7 +128,7 @@ function ItemDetails() {
                     const imgUrl = item?.attributes?.thumbnails.data.find((thumbnail) => thumbnail.attributes.name.includes(e.target.value))
                     setMainImgUrl(imgUrl?.attributes?.url);
                     console.log(item, 'item')
-                    console.log(e.target.value, 'e.target.value')
+                    console.log(imgUrl, 'imgUrl')
                   }}
                   >
                     {item.attributes.colorChoices.map((color) => (
