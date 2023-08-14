@@ -37,6 +37,8 @@ function Stockists() {
     <Stockist key={place.id} place={place} />
   ));
 
+  console.log(heroTextureImports, 'heroTextureImports')
+
   return (
     <Box 
       width="80%" 
