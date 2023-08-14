@@ -28,7 +28,6 @@ function MainCarousel() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const bannerImages = heroBannerImages.map((item) => {
-    console.log(item, 'item')
     return <HeroBannerImage key={item.id} item={item} />  
   });
 

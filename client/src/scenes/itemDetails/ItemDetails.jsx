@@ -125,6 +125,7 @@ function ItemDetails() {
                   defaultValue={item?.attributes?.colorChoices[0]}
                   onChange={(e) => {
                     setItem({...item, attributes: {...item.attributes, color: e.target.value}});
+                    setMainImgUrl(item?.attributes?.url);
                   }}
                   >
                     {item.attributes.colorChoices.map((color) => (

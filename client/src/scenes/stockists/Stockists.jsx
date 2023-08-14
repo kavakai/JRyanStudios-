@@ -28,7 +28,7 @@ function Stockists() {
     <Stockist key={place.id} place={place} />
   ));
 
-  console.log(heroBannerImages['rainbow_light_img.jpeg'], 'heroBannerImages')
+  console.log(heroBannerImages, 'heroBannerImages')
   return (
     <Box 
       width="80%" 
