@@ -22,7 +22,7 @@ const Item = ({ item, width }) => {
       attributes: { url }
     },
   } = image;
-
+  console.log(item, 'item')
   return (
     <Box width={width}>
       <Box
