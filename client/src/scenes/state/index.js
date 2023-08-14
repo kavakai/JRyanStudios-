@@ -6,6 +6,7 @@ const initialState = {
   cart: [],
   items: [],
   stockists: [],
+  heroBanner: [],
 }
 
 export const cartSlice = createSlice({
@@ -50,6 +51,9 @@ export const cartSlice = createSlice({
     setStockists: (state, action) => {
       state.stockists = action.payload;
     },
+    setHeroBanner: (state, action) => {
+      state.heroBanner = action.payload;
+    },
   }
 });
 
@@ -61,6 +65,7 @@ export const {
   decreaseCount, 
   setIsCartOpen,
   setStockists,
+  setHeroBanner,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
