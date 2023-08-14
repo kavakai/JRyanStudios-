@@ -28,7 +28,14 @@ function Stockists() {
     <Stockist key={place.id} place={place} />
   ));
 
-  console.log(heroBannerImages, 'heroBannerImages')
+  const { title, image } = heroBannerImages[1].attributes;
+  const {
+    data: {
+      attributes: { url }
+    },
+  } = image; 
+
+  console.log(heroBannerImages[1], 'heroBannerImages')
   return (
     <Box 
       width="80%" 
@@ -36,8 +43,8 @@ function Stockists() {
       padding={2}
       >
       <img 
-        src={heroBannerImages['rainbow_light_img.jpeg']}
-        alt={'alt'}
+        src={url}
+        alt={title}
         style={{
           width: '100%',
           height: '500px',
