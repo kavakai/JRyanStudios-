@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import Stockist from './Stockist';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +12,7 @@ function Stockists() {
 
   async function getStores() {
     const stores = await fetch(
-      "https://classic-novelty-bafec44cf4.strapiapp.com/api/stockists?populate=*",
+      "https://classic-novelty-bafec44cf4.strapiapp.com/api/stockists?populate=deep",
       { method: "GET" }
     );
     const data = await stores.json();
