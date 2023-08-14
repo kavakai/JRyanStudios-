@@ -69,7 +69,7 @@ function CartMenu() {
                       alt={item?.name}
                       width='123px'
                       height='164px'
-                      src={`https://classic-novelty-bafec44cf4.strapiapp.com/${item?.attributes?.image?.data?.attributes?.url}`}
+                      src={item?.attributes?.image?.data?.attributes?.url}
                     />
                   </Box>
                   <Box flex='1 1 60%'>
