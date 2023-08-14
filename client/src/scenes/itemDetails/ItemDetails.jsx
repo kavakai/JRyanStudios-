@@ -125,7 +125,8 @@ function ItemDetails() {
                   defaultValue={item?.attributes?.colorChoices[0]}
                   onChange={(e) => {
                     setItem({...item, attributes: {...item.attributes, color: e.target.value}});
-                    // setMainImgUrl(item?.attributes?.url);
+                    const imgUrl = item?.attributes?.thumbnails.data.find((thumbnail) => thumbnail.attributes.name.includes(e.target.value))
+                    setMainImgUrl(imgUrl?.attributes?.url);
                     console.log(item, 'item')
                     console.log(e.target.value, 'e.target.value')
                   }}
