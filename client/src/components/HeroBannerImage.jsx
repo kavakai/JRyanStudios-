@@ -9,11 +9,10 @@ function HeroBannerImage({ item }) {
     },
   } = image; 
   
-  
   return (
     <Box key={`carousel-image-${item.index}`}>
       <img 
-        src={`http://localhost:3000/api${url}`}
+        src={url}
         alt={`carousel-${title}`}
         style={{
           width: '100%',
