@@ -61,46 +61,6 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
               },
             },
           },
-          // {
-          //   shipping_rate_data: {
-          //     type: 'fixed_amount',
-          //     fixed_amount: {
-          //       amount: 2500,
-          //       currency: 'usd',
-          //     },
-          //     display_name: 'Priority shipping',
-          //     delivery_estimate: {
-          //       minimum: {
-          //         unit: 'business_day',
-          //         value: 3,
-          //       },
-          //       maximum: {
-          //         unit: 'business_day',
-          //         value: 5,
-          //       },
-          //     },
-          //   },
-          // },
-          // {
-          //   shipping_rate_data: {
-          //     type: 'fixed_amount',
-          //     fixed_amount: {
-          //       amount: 3500,
-          //       currency: 'usd',
-          //     },
-          //     display_name: 'Next day shipping',
-          //     delivery_estimate: {
-          //       minimum: {
-          //         unit: 'business_day',
-          //         value: 1,
-          //       },
-          //       maximum: {
-          //         unit: 'business_day',
-          //         value: 1,
-          //       },
-          //     },
-          //   },
-          // },
         ],
       });
 
