@@ -1,124 +1,44 @@
-// 'use strict';
-// const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
-
-// /**
-//  * order controller
-//  */
-
-// const { createCoreController } = require('@strapi/strapi').factories;
-
-// module.exports = createCoreController('api::order.order', ({ strapi }) => ({
-//   async create(ctx) {
-//     const { products, userName, email } = ctx.request.body;
-
-//     try {
-//       // get item info
-//       const lineItems = await Promise.all(
-//         products.map(async (product) => {
-//           const item = await strapi
-//           .service('api::item.item')
-//           .findOne(product.id);
-
-//           return {
-//             price_data: {
-//               currency: 'usd',
-//               product_data: {
-//                 name: item.name
-//               },
-//               unit_amount: item.price * 100,
-//             },
-//             quantity: product.count,
-//           }
-//         })
-//       );
-
-//       // create stripe session
-//       const session = await stripe.checkout.sessions.create({
-//         payment_method_types: ['card'],
-//         customer_email: email,
-//         mode: 'payment',
-//         success_url: 'https://classic-novelty-bafec44cf4.strapiapp.com/checkout/success',
-//         cancel_url: 'https://classic-novelty-bafec44cf4.strapiapp.com/checkout/cancel',
-//         line_items: lineItems,
-//         shipping_options: [
-//           {
-//             shipping_rate_data: {
-//               type: 'fixed_amount',
-//               fixed_amount: {
-//                 amount: 1200,
-//                 currency: 'usd',
-//               },
-//               display_name: 'Flat rate',
-//               delivery_estimate: {
-//                 minimum: {
-//                   unit: 'business_day',
-//                   value: 5,
-//                 },
-//                 maximum: {
-//                   unit: 'business_day',
-//                   value: 7,
-//                 },
-//               },
-//             },
-//           },
-//         ],
-//       });
-
-//       // create item
-//       await strapi.service('api::order.order').create({
-//         data: { userName, products, stripeSessionId: session.id },
-//       });
-
-//       // return session id
-//       console.log(id, 'session id')
-//       return { id: session.id }
-//     } catch (error) {
-//       console.log(session.id, 'session id in err')
-//       ctx.response.status = 500;
-//       return { error: {message: 'There was a problem creating the charge.'} };
-//     }
-//   }
-// }));
-"use strict";
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+'use strict';
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 /**
  * order controller
  */
 
-const { createCoreController } = require("@strapi/strapi").factories;
+const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController("api::order.order", ({ strapi }) => ({
+module.exports = createCoreController('api::order.order', ({ strapi }) => ({
   async create(ctx) {
     const { products, userName, email } = ctx.request.body;
+
     try {
-      // retrieve item information
+      // get item info
       const lineItems = await Promise.all(
         products.map(async (product) => {
           const item = await strapi
-            .service("api::item.item")
-            .findOne(product.id);
+          .service('api::item.item')
+          .findOne(product.id);
 
           return {
             price_data: {
-              currency: "usd",
+              currency: 'usd',
               product_data: {
-                name: item.name,
+                name: item.name
               },
               unit_amount: item.price * 100,
             },
             quantity: product.count,
-          };
+          }
         })
       );
 
-      // create a stripe session
+      // create stripe session
       const session = await stripe.checkout.sessions.create({
-        payment_method_types: ["card"],
+        payment_method_types: ['card'],
         customer_email: email,
-        mode: "payment",
-        success_url: "https://classic-novelty-bafec44cf4.strapiapp.com/checkout/success",
-        cancel_url: "https://classic-novelty-bafec44cf4.strapiapp.com/checkout/cancel",
+        mode: 'payment',
+        success_url: 'https://classic-novelty-bafec44cf4.strapiapp.com/checkout/success',
+        cancel_url: 'https://classic-novelty-bafec44cf4.strapiapp.com/checkout/cancel',
         line_items: lineItems,
         shipping_options: [
           {
@@ -143,17 +63,19 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
           },
         ],
       });
-      console.log(session, 'session in backend')
-      // create the item
-      await strapi
-        .service("api::order.order")
-        .create({ data: { userName, products, stripeSessionId: session.id } });
 
-      // return the session id
-      return { id: session.id };
+      // create item
+      await strapi.service('api::order.order').create({
+        data: { userName, products, stripeSessionId: session.id },
+      });
+
+      // return session id
+      console.log(id, 'session id')
+      return { id: session.id }
     } catch (error) {
+      console.log(session.id, 'session id in err')
       ctx.response.status = 500;
-      return { error: { message: "There was a problem creating the charge" } };
+      return { error: {message: 'There was a problem creating the charge.'} };
     }
-  },
+  }
 }));
