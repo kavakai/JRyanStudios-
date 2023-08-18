@@ -132,7 +132,7 @@ function Checkout() {
 
     const response = await fetch('https://classic-novelty-bafec44cf4.strapiapp.com/api/orders', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${stripeKey}` },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${stripe._apiKey}` },
       body: JSON.stringify(requestBody),
       
     });
