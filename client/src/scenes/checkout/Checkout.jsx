@@ -137,7 +137,7 @@ function Checkout() {
       
     });
     const session = await response.json();
-    console.log(session, 'session');
+    console.log(stripePromise, 'promise');
     await stripe.redirectToCheckout({
       sessionId: session.id,
     })
