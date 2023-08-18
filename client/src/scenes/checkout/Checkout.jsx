@@ -135,9 +135,9 @@ function Checkout() {
       body: JSON.stringify(requestBody),
       
     });
-    // const session = await response.json();
+    const session = await response.json();
     await stripe.redirectToCheckout({
-      sessionId: response.data.stripeSessionId.id,
+      sessionId: session.id,
     })
   }
 
