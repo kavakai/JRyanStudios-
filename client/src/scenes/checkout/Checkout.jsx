@@ -138,6 +138,7 @@ function Checkout() {
     });
     const session = await response.json();
     console.log(session, 'session');
+    console.log(process.env.REACT_APP_STRIPE_SECRET_KEY, 'key')
     console.log(stripe, 'stripe');
     await stripe.redirectToCheckout({
       sessionId: session.id,
