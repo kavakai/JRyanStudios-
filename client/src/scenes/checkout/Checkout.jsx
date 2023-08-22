@@ -9,6 +9,7 @@ import Payment from './Payment';
 import { loadStripe } from '@stripe/stripe-js';
 
 const stripeKey = 'pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99';
+const key = process.env.STRIPE_SECRET_KEY;
 
 const stripePromise = loadStripe(
   // TEST KEY
@@ -132,13 +133,13 @@ function Checkout() {
 
     const response = await fetch('https://classic-novelty-bafec44cf4.strapiapp.com/api/orders', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${process.env.STRIPE_SECRET_KEY}` },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${key}` },
       body: JSON.stringify(requestBody),
       
     });
     const session = await response.json();
     console.log(session, 'session');
-    console.log(process.env.STRIPE_SECRET_KEY, 'key')
+    console.log(key, 'key');
     console.log(stripe, 'stripe');
     await stripe.redirectToCheckout({
       sessionId: session.id,
