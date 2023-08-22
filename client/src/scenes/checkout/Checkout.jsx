@@ -126,14 +126,14 @@ function Checkout() {
 
     const response = await fetch('https://classic-novelty-bafec44cf4.strapiapp.com/api/orders', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${process.env.STRIPE_SECRET_KEY}` },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${process.env.REACT_APP_STRIPE_SECRET_KEY}` },
       body: JSON.stringify(requestBody),
       
     });
     const session = await response.json();
     console.log(session, 'session');
     console.log(stripe, 'stripe');
-    console.log(process.env.STRIPE_PUB_KEY, 'stripe key')
+    console.log(process.env.REACT_APP_STRIPE_PUB_KEY, 'stripe key')
     await stripe.redirectToCheckout({
       sessionId: session.id,
     })
