@@ -133,6 +133,7 @@ function Checkout() {
     const session = await response.json();
     console.log(session, 'session');
     console.log(stripe, 'stripe');
+    console.log(process.env.STRIPE_SECRET_KEY, 'stripe secret key')
     await stripe.redirectToCheckout({
       sessionId: session.id,
     })
