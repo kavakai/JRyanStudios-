@@ -37,8 +37,8 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
         payment_method_types: ['card'],
         customer_email: email,
         mode: 'payment',
-        success_url: 'https://classic-novelty-bafec44cf4.strapiapp.com/checkout/success',
-        cancel_url: 'https://classic-novelty-bafec44cf4.strapiapp.com/checkout/cancel',
+        success_url: 'https://www.jryanstudios.com/checkout/success',
+        cancel_url: 'https://www.jryanstudios.com/checkout/cancel',
         line_items: lineItems,
         shipping_options: [
           {
