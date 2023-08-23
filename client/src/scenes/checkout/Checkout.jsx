@@ -128,14 +128,14 @@ function Checkout() {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.REACT_APP_STRIPE_SECRET_KEY}`, 
+        Authorization: `Bearer ${stripe._apiKey}`, 
       },
       body: JSON.stringify(requestBody),
       
     });
     const session = await response.json();
     console.log(session, 'session');
-    console.log(stripe, 'stripe');
+    console.log(stripe._apiKey, 'stripe key');
     console.log(response, 'response');
     console.log(requestBody, 'requestBody')
     await stripe.redirectToCheckout({
