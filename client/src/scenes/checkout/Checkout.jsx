@@ -136,6 +136,8 @@ function Checkout() {
     const session = await response.json();
     console.log(session, 'session');
     console.log(stripe, 'stripe');
+    console.log(process.env.TEST_VARIABLE, 'TEST_VARIABLE in frontend')
+
     await stripe.redirectToCheckout({
       sessionId: session.id,
     })
