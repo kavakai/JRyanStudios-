@@ -59,8 +59,7 @@ const Checkout = () => {
     const session = await response.json();
     console.log(session, "session");
     console.log(stripe, "stripe");
-    console.log(response.json(), "response");
-    await stripe.redirectToCheckout({
+    await stripe.redirect({
       sessionId: session.id,
     });
   }
