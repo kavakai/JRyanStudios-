@@ -1,6 +1,7 @@
 'use strict';
 const Stripe = require('stripe');
 const stripe = Stripe(process.env.STRAPI_ADMIN_STRIPE_SECRET_KEY);
+require('dotenv').config({ path: './.env' });
 
 /**
  * order controller
@@ -69,13 +70,12 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
       await strapi.service('api::order.order').create({
         data: { userName, products, stripeSessionId: session.id },
       });
-
+      console.log(stripe, 'stripe')
+      console.log(lineItems, 'lineItems')
       // return session id
       console.log('IWORK')
       return { id: session.id }
     } catch (error) {
-      console.log(stripe, 'stripe')
-      console.log(lineItems, 'lineItems')
       ctx.response.status = 500;
       return { error };
     }
