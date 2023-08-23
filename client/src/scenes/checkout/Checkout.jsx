@@ -128,7 +128,6 @@ function Checkout() {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json', 
-        Authorization: `Bearer ${stripe._apiKey}` 
       },
       body: JSON.stringify(requestBody),
       
@@ -136,8 +135,7 @@ function Checkout() {
     const session = await response.json();
     console.log(session, 'session');
     console.log(stripe, 'stripe');
-    console.log(process.env.TEST_VARIABLE, 'TEST_VARIABLE in frontend')
-
+    console.log(response, 'response');
     await stripe.redirectToCheckout({
       sessionId: session.id,
     })

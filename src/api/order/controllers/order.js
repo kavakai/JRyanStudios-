@@ -1,16 +1,13 @@
 'use strict';
-import Stripe from 'stripe';
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
-console.log(process.env.TEST_VARIABLE, 'TEST_VARIABLE')
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 /**
  * order controller
  */
 
-import { factories } from '@strapi/strapi';
-const { createCoreController } = factories;
+const { createCoreController } = require('@strapi/strapi').factories;
 
-export default createCoreController('api::order.order', ({ strapi }) => ({
+module.exports = createCoreController('api::order.order', ({ strapi }) => ({
   async create(ctx) {
     const { products, userName, email } = ctx.request.body;
 
@@ -73,7 +70,7 @@ export default createCoreController('api::order.order', ({ strapi }) => ({
       });
 
       // return session id
-      return { session }
+      return { id: session.id }
     } catch (error) {
       console.log(stripe, 'stripe')
       console.log(lineItems, 'lineItems')
