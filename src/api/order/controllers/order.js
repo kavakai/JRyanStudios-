@@ -1,6 +1,5 @@
 'use strict';
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
-stripe.setApiVersion('2022-11-15');
 
 /**
  * order controller
