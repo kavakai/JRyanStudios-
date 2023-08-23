@@ -50,8 +50,8 @@ const Checkout = () => {
     const response = await fetch("https://classic-novelty-bafec44cf4.strapiapp.com/api/orders", {
       method: "POST",
       headers: { 
+        "Access-Control-Allow-Origin": "https://www.jryanstudios.com",
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
         Authorization: `Bearer ${process.env.STRAPI_ADMIN_STRIPE_SECRET_KEY}`
       },
       body: JSON.stringify(requestBody),
