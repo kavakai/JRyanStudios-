@@ -1,7 +1,6 @@
 'use strict';
 const Stripe = require('stripe');
 const stripe = Stripe(process.env.STRAPI_ADMIN_STRIPE_SECRET_KEY);
-require('dotenv').config({ path: './.env' });
 
 /**
  * order controller

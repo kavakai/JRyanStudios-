@@ -7,7 +7,6 @@ import { shades } from "../../theme";
 import Payment from "./Payment";
 import Shipping from "./Shipping";
 import { loadStripe } from "@stripe/stripe-js";
-require('dotenv').config({ path: './.env' });
 
 const stripePromise = loadStripe(
   "pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99"
