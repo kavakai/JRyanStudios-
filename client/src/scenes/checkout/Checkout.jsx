@@ -124,7 +124,7 @@ function Checkout() {
       }))
     };
 
-    const response = await fetch('https://classic-novelty-bafec44cf4.strapiapp.com/api/orders', {
+    const response = await fetch('https://classic-novelty-bafec44cf4.strapiapp.com/api/order', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
