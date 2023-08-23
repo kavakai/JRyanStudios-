@@ -11,6 +11,7 @@ import { loadStripe } from '@stripe/stripe-js';
 const stripePromise = loadStripe(
   'pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99'
 );
+const key = process.env.REACT_APP_STRIPE_PUB_KEY;
 
 const initialValues = {
   billingAddress: {
@@ -133,7 +134,7 @@ function Checkout() {
     const session = await response.json();
     console.log(session, 'session');
     console.log(stripe, 'stripe');
-    console.log(process.env.REACT_APP_STRIPE_PUB_KEY, 'stripe key')
+    console.log(key, 'stripe key')
     await stripe.redirectToCheckout({
       sessionId: session.id,
     })
