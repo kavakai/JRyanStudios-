@@ -1,13 +1,15 @@
 'use strict';
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+import Stripe from 'stripe';
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 /**
  * order controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi';
+const { createCoreController } = factories;
 
-module.exports = createCoreController('api::order.order', ({ strapi }) => ({
+export default createCoreController('api::order.order', ({ strapi }) => ({
   async create(ctx) {
     const { products, userName, email } = ctx.request.body;
 
@@ -31,7 +33,7 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
           }
         })
       );
-        console.log(lineItems, 'lineItems')
+
       // create stripe session
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
@@ -73,6 +75,7 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
       return { session }
     } catch (error) {
       console.log(stripe, 'stripe')
+      console.log(lineItems, 'lineItems')
       ctx.response.status = 500;
       return { error };
     }
