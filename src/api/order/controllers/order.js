@@ -1,11 +1,11 @@
 'use strict';
 const Stripe = require('stripe');
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = Stripe(process.env.STRAPI_ADMIN_STRIPE_SECRET_KEY);
 
 /**
  * order controller
  */
-
+ console.log(stripe, 'stripe in controller')
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::order.order', ({ strapi }) => ({

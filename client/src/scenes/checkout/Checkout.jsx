@@ -51,7 +51,7 @@ const Checkout = () => {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.REACT_APP_STRIPE_SECRET_KEY}`
+        Authorization: `Bearer ${process.env.STRAPI_ADMIN_STRIPE_SECRET_KEY}`
       },
       body: JSON.stringify(requestBody),
     });
