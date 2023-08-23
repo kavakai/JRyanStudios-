@@ -51,6 +51,7 @@ const Checkout = () => {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
         Authorization: `Bearer ${process.env.STRAPI_ADMIN_STRIPE_SECRET_KEY}`
       },
       body: JSON.stringify(requestBody),
