@@ -137,6 +137,7 @@ function Checkout() {
     console.log(session, 'session');
     console.log(stripe, 'stripe');
     console.log(response, 'response');
+    console.log(requestBody, 'requestBody')
     await stripe.redirectToCheckout({
       sessionId: session.id,
     })

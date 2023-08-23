@@ -1,5 +1,6 @@
 'use strict';
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const Stripe = require('stripe');
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 /**
  * order controller
@@ -70,6 +71,7 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
       });
 
       // return session id
+      console.log('IWORK')
       return { id: session.id }
     } catch (error) {
       console.log(stripe, 'stripe')
