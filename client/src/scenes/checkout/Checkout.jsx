@@ -21,7 +21,7 @@ const Checkout = () => {
   const handleFormSubmit = async (values, actions) => {
     setActiveStep(activeStep + 1);
 
-    // this copies the billing address onto shipping address
+    // copies the billing address onto shipping address
     if (isFirstStep && values.shippingAddress.isSameAddress) {
       actions.setFieldValue("shippingAddress", {
         ...values.billingAddress,
@@ -49,7 +49,10 @@ const Checkout = () => {
 
     const response = await fetch("https://classic-novelty-bafec44cf4.strapiapp.com/api/orders", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.REACT_APP_STRIPE_SECRET_KEY}`
+      },
       body: JSON.stringify(requestBody),
     });
     const session = await response.json();
