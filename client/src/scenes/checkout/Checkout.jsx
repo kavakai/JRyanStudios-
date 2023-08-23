@@ -139,6 +139,7 @@ function Checkout() {
     await stripe.redirectToCheckout({
       sessionId: session.id,
     });
+  }
 
   return (
     <Box width='80%' m='100px auto'>
