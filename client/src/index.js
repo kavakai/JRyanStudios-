@@ -8,6 +8,7 @@ import { theme } from './theme';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import cartReducer from './scenes/state/index';
+require('dotenv').config()
 
 const store = configureStore({
   reducer: { cart: cartReducer },

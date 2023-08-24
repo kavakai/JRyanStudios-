@@ -7,7 +7,6 @@ import { shades } from "../../theme";
 import Payment from "./Payment";
 import Shipping from "./Shipping";
 import { loadStripe } from "@stripe/stripe-js";
-require('dotenv').config()
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUB_KEY);
 console.log(process.env.REACT_APP_STRIPE_PUB_KEY, 'Pub key')
