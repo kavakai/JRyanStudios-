@@ -17,7 +17,9 @@ function MainCarousel() {
   async function getHeroBanner() {
     const banner = await fetch(
       "https://classic-novelty-bafec44cf4.strapiapp.com/api/hero-banners?populate=deep",
-      { method: "GET" }
+      { method: "GET",
+        headers: {"Access-Control-Request-Headers": "https://www.jryanstudios.com",}
+      }
     );
     const data = await banner.json();
     dispatch(setHeroBanner(data.data));

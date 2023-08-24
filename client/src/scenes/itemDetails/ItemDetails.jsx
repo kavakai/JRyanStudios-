@@ -25,7 +25,9 @@ function ItemDetails() {
   async function getItem() {
     const item = await fetch(
       `https://classic-novelty-bafec44cf4.strapiapp.com/api/items/${itemId}?populate=deep`,
-      {method: 'GET'}
+      { method: 'GET',
+        headers: {"Access-Control-Request-Headers": "https://www.jryanstudios.com",}
+      }
     );
     const itemJson = await item.json();
     setItem(itemJson.data);
@@ -38,7 +40,9 @@ function ItemDetails() {
   async function getItems() {
     const items = await fetch(
       "https://classic-novelty-bafec44cf4.strapiapp.com/api/items?populate=deep",
-      { method: "GET" }
+      { method: "GET",
+        headers: {"Access-Control-Request-Headers": "https://www.jryanstudios.com",} 
+      }
     );
     const itemsJson = await items.json();
     setItems(itemsJson.data);

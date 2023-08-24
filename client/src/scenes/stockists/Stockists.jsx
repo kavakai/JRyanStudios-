@@ -14,7 +14,9 @@ function Stockists() {
   async function getStores() {
     const stores = await fetch(
       "https://classic-novelty-bafec44cf4.strapiapp.com/api/stockists?populate=deep",
-      { method: "GET" }
+      { method: "GET",
+        headers: {"Access-Control-Request-Headers": "https://www.jryanstudios.com",} 
+      }
     );
     const data = await stores.json();
     dispatch(setStockists(data.data));
