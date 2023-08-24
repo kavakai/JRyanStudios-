@@ -10,6 +10,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUB_KEY);
 console.log(process.env.REACT_APP_STRIPE_PUB_KEY, 'Pub key')
+
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0);
   const cart = useSelector((state) => state.cart.cart);
