@@ -8,7 +8,6 @@ import Payment from "./Payment";
 import Shipping from "./Shipping";
 import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe('pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99');
 console.log(process.env.REACT_APP_STRIPE_PUB_KEY, 'Pub key')
 
 const Checkout = () => {
@@ -16,10 +15,10 @@ const Checkout = () => {
   const cart = useSelector((state) => state.cart.cart);
   const isFirstStep = activeStep === 0;
   const isSecondStep = activeStep === 1;
-
+  
   const handleFormSubmit = async (values, actions) => {
     setActiveStep(activeStep + 1);
-
+    
     // copies the billing address onto shipping address
     if (isFirstStep && values.shippingAddress.isSameAddress) {
       actions.setFieldValue("shippingAddress", {
@@ -27,39 +26,44 @@ const Checkout = () => {
         isSameAddress: true,
       });
     }
-
+    
     if (isSecondStep) {
       makePayment(values);
     }
-
+    
     actions.setTouched({});
   };
-
+  
+  const stripePromise = loadStripe('pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99');
+  
   async function makePayment(values) {
-    const stripe = await stripePromise;
-    const requestBody = {
-      userName: [values.firstName, values.lastName].join(" "),
-      email: values.email,
-      products: cart.map(({ id, count }) => ({
-        id,
-        count,
-      })),
-    };
+    try{
+      const stripe = await stripePromise;
+      const requestBody = {
+        userName: [values.firstName, values.lastName].join(" "),
+        email: values.email,
+        products: cart.map(({ id, count }) => ({
+          id,
+          count,
+        })),
+      };
 
-    const response = await fetch("https://classic-novelty-bafec44cf4.strapiapp.com/api/orders", {
-      method: "POST",
-      headers: { 
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${stripe._apiKey}`,
-      },
-      body: JSON.stringify(requestBody),
-    });
-    const session = await response.json();
-    console.log(session, "session");
-    console.log(stripe, "stripe");
-    await stripe.redirectToCheckout({
-      sessionId: session.id,
-    });
+      const response = await fetch("https://classic-novelty-bafec44cf4.strapiapp.com/api/orders", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+      const session = await response.json();
+      console.log(session, "session");
+      console.log(stripe, "stripe");
+      await stripe.redirectToCheckout({
+        sessionId: session.id,
+      });
+    } catch (err) {
+      console.log(err, 'err in fetch');
+    }
   }
 
   return (
