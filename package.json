@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
-  "production": "cross-env NODE_ENV=production npm run build",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
