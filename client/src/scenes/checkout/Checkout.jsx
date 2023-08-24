@@ -49,16 +49,14 @@ const Checkout = () => {
     const response = await fetch("https://classic-novelty-bafec44cf4.strapiapp.com/api/orders", {
       method: "POST",
       headers: { 
-        "Access-Control-Request-Headers": "https://www.jryanstudios.com",
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.REACT_APP_STRIPE_SECRET_KEY}`
       },
       body: JSON.stringify(requestBody),
     });
     const session = await response.json();
     console.log(session, "session");
     console.log(stripePromise, "stripe promise");
-    await stripe.redirect({
+    await stripe.redirectToCheckout({
       sessionId: session.id,
     });
   }
