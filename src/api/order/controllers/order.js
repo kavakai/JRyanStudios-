@@ -1,14 +1,15 @@
 'use strict';
-const Stripe = require('stripe');
+import Stripe from 'stripe';
 const stripe = Stripe(process.env.STRAPI_ADMIN_STRIPE_SECRET_KEY);
 
 /**
  * order controller
  */
  console.log(stripe, 'stripe in controller')
-const { createCoreController } = require('@strapi/strapi').factories;
+import { factories } from '@strapi/strapi';
+const { createCoreController } = factories;
 
-module.exports = createCoreController('api::order.order', ({ strapi }) => ({
+export default createCoreController('api::order.order', ({ strapi }) => ({
   async create(ctx) {
     const { products, userName, email } = ctx.request.body;
 
