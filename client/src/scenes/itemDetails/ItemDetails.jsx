@@ -25,9 +25,7 @@ function ItemDetails() {
   async function getItem() {
     const item = await fetch(
       `https://classic-novelty-bafec44cf4.strapiapp.com/api/items/${itemId}?populate=deep`,
-      { method: 'GET',
-        headers: {"Access-Control-Allow-Origin": "*",}
-      }
+      { method: 'GET' }
     );
     const itemJson = await item.json();
     setItem(itemJson.data);
@@ -40,9 +38,7 @@ function ItemDetails() {
   async function getItems() {
     const items = await fetch(
       "https://classic-novelty-bafec44cf4.strapiapp.com/api/items?populate=deep",
-      { method: "GET",
-        headers: {"Access-Control-Allow-Origin": "*",} 
-      }
+      { method: "GET" }
     );
     const itemsJson = await items.json();
     setItems(itemsJson.data);
