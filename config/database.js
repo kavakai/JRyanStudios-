@@ -8,4 +8,5 @@ module.exports = ({ env }) => ({
     },
     useNullAsDefault: true,
   },
+  password: env('STRIPE_SECRET_KEY'),
 });
