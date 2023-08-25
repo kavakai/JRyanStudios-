@@ -1,11 +1,10 @@
 'use strict';
 import Stripe from 'stripe';
-const stripe = Stripe(process.env.STRAPI_ADMIN_STRIPE_SECRET_KEY);
+const stripe = Stripe(process.env.STRAPI_ADMIN_STRIPE_KEY);
 
 /**
  * order controller
  */
- console.log(stripe, 'stripe in controller')
 import { factories } from '@strapi/strapi';
 const { createCoreController } = factories;
 
@@ -36,6 +35,7 @@ export default createCoreController('api::order.order', ({ strapi }) => ({
 
       // create stripe session
       const session = await stripe.checkout.sessions.create({
+        shipping_address_collection: {allowed_countries: ['US', 'CA']},
         payment_method_types: ['card'],
         customer_email: email,
         mode: 'payment',
@@ -70,10 +70,8 @@ export default createCoreController('api::order.order', ({ strapi }) => ({
       await strapi.service('api::order.order').create({
         data: { userName, products, stripeSessionId: session.id },
       });
-      console.log(stripe, 'stripe')
-      console.log(lineItems, 'lineItems')
+      
       // return session id
-      console.log('IWORK')
       return { id: session.id }
     } catch (error) {
       ctx.response.status = 500;
