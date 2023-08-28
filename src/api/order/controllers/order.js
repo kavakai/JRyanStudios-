@@ -1,6 +1,6 @@
 'use strict';
 import Stripe from 'stripe';
-const stripe = Stripe(process.env.ADMIN_STRIPE_KEY);
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 /**
  * order controller

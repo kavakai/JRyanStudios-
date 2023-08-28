@@ -10,4 +10,7 @@ module.exports = ({ env }) => ({
       salt: env('TRANSFER_TOKEN_SALT'),
     },
   },
+  stripe: {
+    token: env('STRIPE_SECRET_KEY'),
+  },
 });
