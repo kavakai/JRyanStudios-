@@ -1,6 +1,6 @@
 'use strict';
 import Stripe from 'stripe';
-const stripe = Stripe(process.env.STRAPI_ADMIN_STRIPE_KEY);
+const stripe = Stripe(process.env.ADMIN_STRIPE_KEY);
 
 /**
  * order controller
@@ -75,6 +75,7 @@ export default createCoreController('api::order.order', ({ strapi }) => ({
       return { id: session.id }
     } catch (error) {
       ctx.response.status = 500;
+      console.log(error, 'error in controller')
       return { error };
     }
   }

@@ -8,7 +8,7 @@ import Payment from "./Payment";
 import Shipping from "./Shipping";
 import { loadStripe } from "@stripe/stripe-js";
 
-console.log(process.env.REACT_APP_STRIPE_PUB_KEY, 'Pub key')
+console.log(process.env.ADMIN_STRIPE_KEY, 'Pub key')
 
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0);
