@@ -8,7 +8,7 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 import { factories } from '@strapi/strapi';
 const { createCoreController } = factories;
 
-export default createCoreController('api::order.order', ({ strapi }) => ({
+module.exports = createCoreController('api::order.order', ({ strapi }) => ({
   async create(ctx) {
     const { products, userName, email } = ctx.request.body;
 
