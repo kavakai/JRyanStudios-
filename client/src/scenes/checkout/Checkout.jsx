@@ -33,7 +33,7 @@ const Checkout = () => {
   };
   
   const stripePromise = loadStripe('pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99');
-  if(process.env.REACT_APP_STRAPI_KEY) { 
+  if(process.env.STRAPI_KEY) { 
     console.log('It is set!'); 
   }
   else { 
@@ -56,7 +56,7 @@ const Checkout = () => {
         headers: { 
           "Content-Type": "application/json",
         },
-        Authorization: `Bearer ${process.env.REACT_APP_STRAPI_KEY}`,
+        Authorization: `Bearer ${process.env.STRAPI_KEY}`,
         body: JSON.stringify(requestBody),
       });
       const session = await response.json();
