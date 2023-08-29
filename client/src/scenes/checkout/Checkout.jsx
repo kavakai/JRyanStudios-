@@ -51,12 +51,13 @@ const Checkout = () => {
         headers: { 
           "Content-Type": "application/json",
         },
+        Authorization: `Bearer ${process.env.REACT_APP_STRAPI_KEY}`,
         body: JSON.stringify(requestBody),
       });
       const session = await response.json();
       console.log(session, "session");
       console.log(stripe, "stripe");
-      
+
       await stripe.redirectToCheckout({
         sessionId: session.id,
       });
