@@ -33,7 +33,12 @@ const Checkout = () => {
   };
   
   const stripePromise = loadStripe('pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99');
-  
+  if(process.env.REACT_APP_STRAPI_KEY) { 
+    console.log('It is set!'); 
+  }
+  else { 
+      console.log('No set!'); 
+}
   async function makePayment(values) {
     try{
       const stripe = await stripePromise;
