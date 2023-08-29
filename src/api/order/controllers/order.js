@@ -35,6 +35,7 @@ export default createCoreController('api::order.order', ({ strapi }) => ({
 
       // create stripe session
       const session = await stripe.checkout.sessions.create({
+        apiKey: process.env.STRIPE_SECRET_KEY,
         shipping_address_collection: {allowed_countries: ['US', 'CA']},
         payment_method_types: ['card'],
         customer_email: email,
