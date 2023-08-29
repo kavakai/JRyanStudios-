@@ -67,9 +67,11 @@ export default createCoreController('api::order.order', ({ strapi }) => ({
       });
 
       // create item
-      await strapi.service('api::order.order').create({
-        data: { userName, products, stripeSessionId: session.id },
-      });
+      await strapi
+        .service('api::order.order')
+        .create({
+          data: { userName, products, stripeSessionId: session.id },
+        });
       
       // return session id
       return { id: session.id }
