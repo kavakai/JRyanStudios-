@@ -1,5 +1,5 @@
 'use strict';
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')(process.env.STRAPI_ADMIN_STRIPE_KEY);
 
 /**
  * order controller
