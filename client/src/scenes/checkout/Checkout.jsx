@@ -32,9 +32,9 @@ const Checkout = () => {
     actions.setTouched({});
   };
   
-  console.log(process.env.STRAPI_ADMIN_STRIPE_KEY, 'key')
+  console.log(process.env.STRIPE_SECRET_KEY, 'key')
   const stripePromise = loadStripe('pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99');
-  if(process.env.STRAPI_ADMIN_STRIPE_KEY) { 
+  if(process.env.STRIPE_SECRET_KEY) { 
     console.log('It is set!'); 
   }
   else { 
@@ -57,7 +57,7 @@ const Checkout = () => {
         headers: { 
           "Content-Type": "application/json",
         },
-        Authorization: `Bearer ${process.env.STRAPI_KEY}`,
+        Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`,
         body: JSON.stringify(requestBody),
       });
       const session = await response.json();
