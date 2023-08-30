@@ -32,9 +32,9 @@ const Checkout = () => {
     actions.setTouched({});
   };
   
-  console.log(process.env.REACT_APP_STRAPI_KEY, 'key')
+  console.log(process.env.REACT_APP_STRIPE_KEY, 'key')
   const stripePromise = loadStripe('pk_live_51NDsOeGc9Mev9oaLiRxVP47oV3qHuGnP9mTSE2NNIyTBmG7xPZSztxxdcj6bkOE8ZxmEbqJJUVCHCIv1ITcBydK200cY1wrJ99');
-  if(process.env.REACT_APP_STRAPI_KEY) { 
+  if(process.env.REACT_APP_STRIPE_KEY) { 
     console.log('It is set!'); 
   }
   else { 
