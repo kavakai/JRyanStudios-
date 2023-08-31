@@ -1,5 +1,6 @@
 'use strict';
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+console.log(stripe, 'stripe in controller')
 
 /**
  * order controller
