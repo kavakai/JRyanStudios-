@@ -55,7 +55,6 @@ const Checkout = () => {
         headers: { 
           "Content-Type": "application/json",
         },
-        Authorization: `Bearer ${process.env.STRAPI_ADMIN_STRIPE_KEY}`,
         body: JSON.stringify(requestBody),
       });
       const session = await response.json();
