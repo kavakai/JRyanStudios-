@@ -1,6 +1,5 @@
 'use strict';
-const key = env('STRAPI_ADMIN_STRIPE_KEY')
-const stripe = require('stripe')(key);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 /**
  * order controller
