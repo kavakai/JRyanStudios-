@@ -24,11 +24,9 @@ const Checkout = () => {
         isSameAddress: true,
       });
     }
-    
     if (isSecondStep) {
       makePayment(values);
-    }
-    
+    }  
     actions.setTouched({});
   };
   
